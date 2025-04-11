@@ -18,6 +18,13 @@ typedef struct{     // create class characters
     Skill ch_skill2;
 }Character;
 
+typedef struct{     // create class special skills
+    char name[50];
+    Character p1;
+    Character p2;
+    Character p3;
+}Skill;
+
 int main(){
 
 Skill Rugissement;      // initialising special skill : Rugissement -40% DEF
