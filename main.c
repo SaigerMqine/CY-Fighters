@@ -23,7 +23,7 @@ typedef struct{     // create class special skills
     Character p1;
     Character p2;
     Character p3;
-}Skill;
+}Equipe;
 
 int main(){
 
