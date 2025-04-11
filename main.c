@@ -102,7 +102,7 @@ Rugissement.value = 0.6;
 Rugissement.duration = 1;
 Rugissement.cd = 2;
 
-Skill Hurlement_de_chasse;      // initialising special skill : Hurlement de chasse +30% DEF
+Skill Hurlement_de_chasse;      // initialising special skill : Hurlement de chasse +30% ATT de groupe
 strcpy(Hurlement_de_chasse.name, "Hurlement de chasse");
 Hurlement_de_chasse.value = 1.3;
 Hurlement_de_chasse.duration = 1;
