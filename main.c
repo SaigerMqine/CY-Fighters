@@ -39,7 +39,7 @@ float verifloat(){
 
 char verifs(){
     float err=0;
-    char d;
+    char d[100];
     while (scanf("%s",&err)!= 1 ){
         printf("erreur");
         scanf("%f",&err);
