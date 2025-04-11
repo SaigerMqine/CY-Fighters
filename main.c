@@ -3,12 +3,14 @@
 
 int verifint(){
     int d=0;
+    char c;
     char err;
-    while (scanf("%d",&d)!= 1 ){
-        printf("erreur");
-        scanf("%1s",&err);
+    if(scanf("%d%c", &d, &c) == 2 && c == '\n'){ 
+        return d;
     }
-    return d;
+     else {
+            while ((c = getchar()) != '\n' && c != EOF);
+    }
 }
 
 
@@ -77,9 +79,10 @@ int mode(){
     int d=0;
     int n = 0;
     printf("tape 1 pour jouer contre l'ordinateur \ntape 2 pour jouer contre un ami\n");
-   while (d!= 1 && d!= 2){
-    d = verifint();
-   }
+    while (d!= 1 && d!= 2){
+        printf("Erreur, Tape 1 ou 2\n");
+     d = verifint();
+    }
     if (d == 1){
         printf(" tape 1 mode facile \n tape 2 mode difficile \n tape 3 mode infernal\n");
         n= verifint();
