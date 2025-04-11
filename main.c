@@ -1,7 +1,3 @@
-int main(){
-
-return 0;
-}
 #include <stdio.h>
 #include <string.h>
 typedef struct{     // create class special skills
