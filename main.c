@@ -46,3 +46,57 @@ Loup.ch_skill2 = Hurlement_de_chasse;
  printf("HP : %f\nATK : %f\nDEF : %f\nRES : %f\nSPD : %f\nskill 1 : %s\nskill 2 : %s\n", Loup.MaxHP, Loup.ATK, Loup.DEF, Loup.RES, Loup.SPD, Loup.ch_skill1.name, Loup.ch_skill2.name);
     return 0;
 }
+
+
+
+int verifint(){
+    int d=0;
+    char err;
+    while (scanf("%d",&d)!= 1 ){
+        printf("erreur");
+        scanf("%1s",&err);
+    }
+    return d;
+}
+
+
+
+char verifc(){
+    float err=0;
+    char d;
+    while (scanf("%c",&d)!= 1 ){
+        printf("erreur");
+        scanf("%f",&err);
+        }
+    return d;
+}
+
+
+
+float verifloat(){
+    float d=0;
+    char err;
+    while (scanf("%f",&d)!= 1 ){
+        printf("erreur");
+        scanf("%1s",&err);
+            }
+    return d;
+}
+
+
+
+char verifs(){
+    float err=0;
+    char d;
+    while (scanf("%s",&err)!= 1 ){
+        printf("erreur");
+        scanf("%f",&err);
+            }
+    return d;
+}
+
+
+
+
+
+
