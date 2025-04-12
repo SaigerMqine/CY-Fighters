@@ -23,7 +23,6 @@ typedef struct{     // create class special skills
     Character p3;
 }Team;
 
-
 Team MakeTeam(les characters){
 int n;
 int a;
