@@ -29,8 +29,8 @@ Team MakeTeam(les characters){
     int n;
     int a;
     int b;
-    printf("Personnage : Loup\n");
-    printf("HP : %f\nATK : %f\nDEF : %f\nRES : %f\nSPD : %f\nskill 1 : %s\nskill 2 : %s\n", Loup.MaxHP, Loup.ATK, Loup.DEF, Loup.RES, Loup.SPD, Loup.ch_skill1.name, Loup.ch_skill2.name);
+    printf(" ┌────────────────────────────────┐\n │ Personnage : Loup              │ \n ├────────────────────────────────┤\n");
+    printf(" │ HP : %f                │ \n │ ATK : %f                │ \n │ DEF : %f                │ \n │ RES : %f                │ \n │ SPD : %f               │ \n │ skill 1 : %s          │ \n │ skill 2 : %s  │ \n └────────────────────────────────┘", Loup.MaxHP, Loup.ATK, Loup.DEF, Loup.RES, Loup.SPD, Loup.ch_skill1.name, Loup.ch_skill2.name);
     printf("choisissez un perso parmi ci-dessus en taper 1,2,3,4,5,6 respectivement");
     n=verifint();
     if(n==1){
