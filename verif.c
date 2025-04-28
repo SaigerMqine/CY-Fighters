@@ -24,21 +24,9 @@ char verifc(){
 
 
 
-float verifloat(){
-    float d=0;
-    char err;
-    while (scanf("%f",&d)!= 1 ){
-        printf("erreur");
-        scanf("%1s",&err);
-            }
-    return d;
-}
-
-
-
-char* verifs(){
+char* verifName(){
     float err=0;
-    char d[100];
+    char d[20];
     while (scanf("%s",&err)!= 1 ){
         printf("erreur");
         scanf("%f",&err);
