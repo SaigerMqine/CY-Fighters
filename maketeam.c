@@ -6,12 +6,14 @@ typedef struct{     // create class special skills
 }Skill;
 
 typedef struct{     // create class characters 
+    int KEY;
     float MaxHP;
     float ActHP;
     float ATK;
     float DEF;
     float RES;
     float SPD;
+    int ATK_bar;
     Skill ch_skill1;
     Skill ch_skill2;
 }Character;
