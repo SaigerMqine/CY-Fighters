@@ -1,3 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+#define Max_name_length 25
+
+
 int verifint(){
     int d=0;
     char c;
@@ -11,25 +19,20 @@ int verifint(){
 }
 
 
+char* verifname(){
+    char* name = malloc(Max_name_length * sizeof(char)); 
+    if (name == NULL) {
+        printf("erreur malloc\n");
+        exit(1);
+    }
+     if (fgets(name, Max_name_length, stdin) != NULL) {
+        size_t len = strlen(name);
+    }
+else {
+        printf("rentre un nom correct\n");
+        free(name);
+        return 0;
+    }
 
-char verifc(){
-    float err=0;
-    char d;
-    while (scanf("%c",&d)!= 1 ){
-        printf("erreur");
-        scanf("%f",&err);
-        }
-    return d;
-}
-
-
-
-char* verifName(){
-    float err=0;
-    char d[20];
-    while (scanf("%s",&err)!= 1 ){
-        printf("erreur");
-        scanf("%f",&err);
-            }
-    return d;
+    return name;
 }
