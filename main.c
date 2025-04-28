@@ -47,7 +47,7 @@ int main(){
     Loup.DEF = 18;
     Loup.RES = 10;
     Loup.SPD = 107;
-    Loup.ATK_bar = 0
+    Loup.ATK_bar = 0;
     Loup.ch_skill1 = Rugissement;
     Loup.ch_skill2 = Hurlement_de_chasse;
 
