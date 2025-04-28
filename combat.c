@@ -3,7 +3,7 @@ void ordifacile(){           //fonction pour jouer contre l'ordi mais c'est le d
     int tab[6];
     MakeTeam(les characters);
     MakeTeambot(les characters);
-    while(p1.ActHP != 0 && p2.ActHP != 0 && p3.ActHP != 0 ){
+    while(Team1.p1.ActHP > 0 || Team1.p2.ActHP > 0 || Team1.p3.ActHP > 0 && Team2.p1.ActHP > 0 || Team2.p2.ActHP > 0 || Team2.p3.ActHP > 0){
         for (int i=0 i<6 i++){
             tab[i]+= tabcharacter[i].SPD
             if (tab[i] >= 100){       // 100 c'est une valeur temporaire  
