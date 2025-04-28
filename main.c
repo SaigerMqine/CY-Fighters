@@ -27,29 +27,29 @@ int mode(){
 
 int main(){
 
-    Skill Rugissement;      // initialising special skill : Rugissement -40% DEF
-    strcpy(Rugissement.name, "Rugissement");
-    Rugissement.value = 0.6;
-    Rugissement.duration = 1;
-    Rugissement.cd = 2;
+    Skill S1;      // initialising special skill : Rugissement -40% DEF
+    strcpy(S1.name, "Rugissement");
+    S1.value = 0.6;
+    S1.duration = 1;
+    S1.cd = 2;
 
-    Skill Hurlement_de_chasse;      // initialising special skill : Hurlement de chasse +30% ATT de groupe
-    strcpy(Hurlement_de_chasse.name, "Hurlement de chasse");
-    Hurlement_de_chasse.value = 1.3;
-    Hurlement_de_chasse.duration = 1;
-    Hurlement_de_chasse.cd = 3;
+    Skill S2;      // initialising special skill : Hurlement de chasse +30% ATT de groupe
+    strcpy(S2.name, "Hurlement de chasse");
+    S2.value = 1.3;
+    S2.duration = 1;
+    S2.cd = 3;
 
-    Character Loup;         // initialising character : Loup
-    Loup.KEY = 1;
-    Loup.MaxHP = 334;
-    Loup.ActHP = 334;
-    Loup.ATK = 25;
-    Loup.DEF = 18;
-    Loup.RES = 10;
-    Loup.SPD = 107;
-    Loup.ATK_bar = 0;
-    Loup.ch_skill1 = Rugissement;
-    Loup.ch_skill2 = Hurlement_de_chasse;
+    Character c1;         // initialising character : c1
+    strcpy(c1.name, "Loup");
+    c1.MaxHP = 334;
+    c1.ActHP = 334;
+    c1.ATK = 25;
+    c1.DEF = 18;
+    c1.RES = 10;
+    c1.SPD = 107;
+    c1.ATK_bar = 0;
+    c1.ch_skill1 = Rugissement;
+    c1.ch_skill2 = Hurlement_de_chasse;
 
     printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");
     int n = verifint();
