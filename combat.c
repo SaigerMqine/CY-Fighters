@@ -1,7 +1,8 @@
 void ordifacile(){           //fonction pour jouer contre l'ordi mais c'est le debut et il faut mettre les bons perso dans le tableau 
-    character tabcharacter[6] 
-    int tab[6]
-    choixordiequipe()
+    character tabcharacter[6];
+    int tab[6];
+    MakeTeam(les characters);
+    MakeTeambot(les characters);
     while(p1.ActHP != 0 && p2.ActHP != 0 && p3.ActHP != 0 ){
         for (int i=0 i<6 i++){
             tab[i]+= tabcharacter[i].SPD
