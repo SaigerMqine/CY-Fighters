@@ -6,7 +6,7 @@ typedef struct{     // create class special skills
 }Skill;
 
 typedef struct{     // create class characters 
-    int KEY;
+    char name[50];
     float MaxHP;
     float ActHP;
     float ATK;
