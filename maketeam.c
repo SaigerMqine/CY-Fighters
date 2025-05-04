@@ -3,7 +3,7 @@ typedef struct{     // create class special skills
     float value;
     float duration;
     float cd;
-    char description[100]
+    char description[100];
 }Skill;
 
 typedef struct{     // create class characters 
