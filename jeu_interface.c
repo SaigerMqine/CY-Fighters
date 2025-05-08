@@ -188,6 +188,7 @@ typedef struct {
      for (int i=0;i<98;i++){
          printf("─");
      }
+     printf("┘");
  }
  
 void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvoie le perso qui attaque   
