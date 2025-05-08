@@ -1,168 +1,69 @@
-Character characters[6];
-Team MakeTeam(les characters){
-    int n;
-    int a;
-    int b;
-    printf("choisissez un perso parmi ci-dessus en taper 1,2,3,4,5,6 respectivement");
-    n=verifint();
-    if(n==1){
-        Team.p1 = c1
-        a=1;  
-    }
-    if(n==2){
-        Team.p1 = c2
-        a=2;   
-    }
-    if(n==3){
-        Team.p1 = c3
-        a=3;    
-    }
-    if(n==4){
-        Team.p1 = c4
-        a=4;   
-    }
-    if(n==5){
-        Team.p1 = c5
-        a=5;    
-    }
-    if(n==6){
-        Team.p1 = c6
-        a=6;   
-    }
-    printf("choisissez un perso parmi ci-dessus en taper 1,2,3,4,5,6 respectivement");
-    n=verifint();
-    while (n==a){
-        printf("choisissez un perso parmi ci-dessus en taper 1,2,3,4,5,6 respectivement");
-        n=verifint();    
-    }
-    if(n==1){
-        Team.p2 = c1
-        b=1;    
-    }
-    if(n==2){
-        Team.p2 = c2
-        b=2;    
-    }
-    if(n==3){
-        Team.p2 = c3
-        b=3;    
-    }
-    if(n==4){
-        Team.p2 = c4
-        b=4;    
-    }
-    if(n==5){
-        Team.p2 = c5
-        b=5;    
-    }
-    if(n==6){
-        Team.p2 = c6
-        b=6;    
-    }
-    printf("choisissez un perso parmi ci-dessus en taper 1,2,3,4,5,6 respectivement");
-    n=verifint();
-    while (n==a || n==b){
-        printf("choisissez un perso parmi ci-dessus en taper 1,2,3,4,5,6 respectivement");
-        n=verifint();   
-    }
-    if(n==1){
-        Team.p3 = c1
-    }
-    if(n==2){
-        Team.p3 = c2  
-    }
-    if(n==3){
-        Team.p3 = c3    
-    }
-    if(n==4){
-        Team.p3 = c4    
-    }
-    if(n==5){
-        Team.p3 = c5
-    }
-    if(n==6){
-        Team.p3 = c6
-    }
-    return Team;
-}
 Team MakeTeam(Character characters[], int nb) {
-    int n;
-    int a;
-    int b;
-    n=(rand()%6)+1;
-    if(n==1){
-        Team.p1 = c1
-        a=1;  
+    Team team1;
+    printf("Entrez le nom de votre équipe : ");
+    team1.name = verifname();
+    int choisis[3] = {-1, -1, -1};
+    int i = 0;
+    while (i < 3) {
+        for (int j = 0; j < nb; j++) afficher_perso(characters[j], j);
+        printf("Choisissez le personnage %d (1 à %d) : ", i + 1, nb);
+        int choix = verifint() - 1;
+
+        int deja_choisi = 0;
+        for (int k = 0; k < i; k++) {
+            if (choix == choisis[k]) {
+                deja_choisi = 1;
+                break;
+            }
+        }
+
+        if (deja_choisi) {
+            printf("Personnage déjà choisi !\n");
+            continue;
+        }
+
+        choisis[i] = choix;
+        if (i == 0) team1.p1 = characters[choix];
+        else if (i == 1) team1.p2 = characters[choix];
+        else team1.p3 = characters[choix];
+
+        i++;
     }
-    if(n==2){
-        Team.p1 = c2
-        a=2;   
+
+    return team1;
+}
+
+Team MakeTeam(Character characters[], int nb) {
+    Team team2;
+    printf("Entrez le nom de votre équipe : ");
+    team2.name = verifname();
+    int choisis[3] = {-1, -1, -1};
+    int i = 0;
+    while (i < 3) {
+        for (int j = 0; j < nb; j++) afficher_perso(characters[j], j);
+        printf("Choisissez le personnage %d (1 à %d) : ", i + 1, nb);
+        int choix = verifint() - 1;
+
+        int deja_choisi = 0;
+        for (int k = 0; k < i; k++) {
+            if (choix == choisis[k]) {
+                deja_choisi = 1;
+                break;
+            }
+        }
+
+        if (deja_choisi) {
+            printf("Personnage déjà choisi !\n");
+            continue;
+        }
+
+        choisis[i] = choix;
+        if (i == 0) team2.p1 = characters[choix];
+        else if (i == 1) team2.p2 = characters[choix];
+        else team2.p3 = characters[choix];
+
+        i++;
     }
-    if(n==3){
-        Team.p1 = c3
-        a=3;    
-    }
-    if(n==4){
-        Team.p1 = c4
-        a=4;   
-    }
-    if(n==5){
-        Team.p1 = c5
-        a=5;    
-    }
-    if(n==6){
-        Team.p1 = c6
-        a=6;   
-    }
-    n=(rand()%6)+1;
-    while (n==a){
-        n=(rand()%6)+1    
-        }
-        if(n==1){
-            Team.p2 = c1
-            b=1;    
-        }
-        if(n==2){
-            Team.p2 = c2
-            b=2;    
-        }
-        if(n==3){
-            Team.p2 = c3
-            b=3;    
-        }
-        if(n==4){
-            Team.p2 = c4
-            b=4;    
-        }
-        if(n==5){
-            Team.p2 = c5
-            b=5;    
-        }
-        if(n==6){
-            Team.p2 = c6
-            b=6;    
-        }
-    n=(rand()%6)+1;
-    while (n==a || n==b){
-        n=(rand()%6)+1;   
-        }
-        if(n==1){
-            Team.p3 = c1
-        }
-        if(n==2){
-            Team.p3 = c2  
-        }
-        if(n==3){
-            Team.p3 = c3    
-        }
-        if(n==4){
-            Team.p3 = c4    
-        }
-        if(n==5){
-            Team.p3 = c5
-        }
-        if(n==6){
-            Team.p3 = c6
-        }
-    return Team;
+
+    return team2;
 }
