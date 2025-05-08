@@ -110,35 +110,6 @@ int main(){
     perso2.ch_skill2= buff;
 
 
-    Skill sk7;
-    strcpy(sk7.name,"coup_rapide");
-    sk7.value=1.5;
-    sk7.duration=1;
-    sk7.cd=3;
-    strcpy(sk7.description, "augmente la vitesse de 50% au prochain tour");
-    
-    Skill sk8;
-    strcpy(sk8.name, "dash");
-    sk8.value=10;
-    sk8.duration=1;
-    sk8.cd=6;
-    strcpy(sk8.description, "esquive tout les attaques pendant un tour");
-
-
-    Character ch2;
-    strcpy(ch2.name , "hollowk");
-    ch2.MaxHP= 210;
-    ch2.ActHP=210;
-    ch2.ATK=23;
-    ch2.DEF=15;
-    ch2.RES=10;
-    ch2.SPD=88;
-    ch2.ATK_bar=0;
-    ch2.ch_skill1= sk7;
-    ch2.ch_skill2=sk8;
-
-
-
     printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");
     int n = verifint();
     while(n != 1 && n != 2){
