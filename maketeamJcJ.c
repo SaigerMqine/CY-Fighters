@@ -1,37 +1,8 @@
-typedef struct{     // create class special skills
-    char name[50];
-    float value;
-    float duration;
-    float cd;
-    char description[100];
-}Skill;
-
-typedef struct{     // create class characters 
-    char name[50];
-    float MaxHP;
-    float ActHP;
-    float ATK;
-    float DEF;
-    float RES;
-    float SPD;
-    int ATK_bar;
-    Skill ch_skill1;
-    Skill ch_skill2;
-}Character;
-
-typedef struct{     // create class special skills
-    char name[50];
-    Character p1;
-    Character p2;
-    Character p3;
-}Team;
-
+Character characters[6];
 Team MakeTeam(les characters){
     int n;
     int a;
     int b;
-    printf(" ┌────────────────────────────────┐\n │ Personnage : 1                 │ \n ├────────────────────────────────┤\n");
-    printf(" │ HP : %f                │ \n │ ATK : %f                │ \n │ DEF : %f                │ \n │ RES : %f                │ \n │ SPD : %f               │ \n │ skill 1 : %s          │ \n │ skill 2 : %s  │ \n └────────────────────────────────┘", c1.MaxHP, c1.ATK, c1.DEF, c1.RES, c1.SPD, c1.ch_skill1.name, c1.ch_skill2.name);
     printf("choisissez un perso parmi ci-dessus en taper 1,2,3,4,5,6 respectivement");
     n=verifint();
     if(n==1){
@@ -114,7 +85,7 @@ Team MakeTeam(les characters){
     }
     return Team;
 }
-Team MakeTeambot(les characters){
+Team MakeTeam(Character characters[], int nb) {
     int n;
     int a;
     int b;
