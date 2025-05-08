@@ -184,7 +184,7 @@ typedef struct {
          printf(" ");
      }
      printf("|\n");
-     printf(" ");
+     printf("└");
      for (int i=0;i<98;i++){
          printf("─");
      }
