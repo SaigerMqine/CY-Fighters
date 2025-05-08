@@ -1,0 +1,20 @@
+Nom: Yoda
+MaxHP: 300.0
+ActHP: 300.0
+ATK: 50.0
+DEF: 10.0
+RES: 10.0
+SPD: 80.0
+ATK_bar: 0.0
+
+Skill1: coup de sabre laser
+Skill1_Val: 2.0
+Skill1_Duration: 1.0
+Skill1_CD: 5.0
+Skill1_Desc: double ses dégats infligés au prochain tour.
+
+Skill2: Force
+Skill2_Val: 2.0
+Skill2_Duration: 2.0
+Skill2_CD: 4.0
+Skill2_Desc: La défense est doublée pendant 2 tours.
