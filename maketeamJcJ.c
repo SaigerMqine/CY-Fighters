@@ -1,7 +1,7 @@
 Team MakeTeam(Character characters[], int nb) {
     Team team1;
     printf("Entrez le nom de votre équipe : ");
-    team1.name = verifname();
+    strcpy(team1.name, verifname());
     int choisis[3] = {-1, -1, -1};
     int i = 0;
     while (i < 3) {
@@ -33,10 +33,10 @@ Team MakeTeam(Character characters[], int nb) {
     return team1;
 }
 
-Team MakeTeam(Character characters[], int nb) {
+Team MakeTeam2(Character characters[], int nb) {
     Team team2;
     printf("Entrez le nom de votre équipe : ");
-    team2.name = verifname();
+    strcpy(team1.name, verifname());
     int choisis[3] = {-1, -1, -1};
     int i = 0;
     while (i < 3) {
