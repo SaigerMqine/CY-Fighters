@@ -99,7 +99,7 @@ int main(){
 
     Character perso2;
     strcpy(perso2.name , "ange");
-    perso2.MaxHP= 230
+    perso2.MaxHP= 230;
     perso2.ActHP=230;
     perso2.ATK=20;
     perso2.DEF=12;
@@ -108,6 +108,64 @@ int main(){
     perso2.ATK_bar=0;
     perso2.ch_skill1= soin;
     perso2.ch_skill2= buff;
+
+
+    Skill sk5;
+    strcpy(sk5.name,"chargeur");
+    sk5.value=1.5;
+    sk5.duration=1;
+    sk5.cd=3;
+    strcpy(sk5.description, "augmente l'attaque de 50% au prochain tour");
+    
+    Skill sk6;
+    strcpy(sk6.name, "toile éleck");
+    sk6.value=0.5;
+    sk6.duration=1;
+    sk6.cd=5;
+    strcpy(sk6.description, "vitesse de l'ennemie est divisé par 2 au prochain tour");
+
+
+    Character ch1;
+    strcpy(ch1.name , "rajone");
+    ch1.MaxHP= 190;
+    ch1.ActHP=190;
+    ch1.ATK=40;
+    ch1.DEF=10;
+    ch1.RES=15;
+    ch1.SPD=100;
+    ch1.ATK_bar=0;
+    ch1.ch_skill1= sk5;
+    ch1.ch_skill2=sk6;
+
+
+    Skill sk7;
+    strcpy(sk7.name,"coup_rapide");
+    sk7.value=1.5;
+    sk7.duration=1;
+    sk7.cd=3;
+    strcpy(sk7.description, "augmente la vitesse de 50% au prochain tour");
+    
+    Skill sk8;
+    strcpy(sk8.name, "dash");
+    sk8.value=10;
+    sk8.duration=1;
+    sk8.cd=6;
+    strcpy(sk8.description, "esquive tout les attaques pendant un tour");
+
+
+    Character ch2;
+    strcpy(ch2.name , "hollowk");
+    ch2.MaxHP= 210;
+    ch2.ActHP=210;
+    ch2.ATK=23;
+    ch2.DEF=15;
+    ch2.RES=10;
+    ch2.SPD=88;
+    ch2.ATK_bar=0;
+    ch2.ch_skill1= sk7;
+    ch2.ch_skill2=sk8;
+
+
 
     printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");
     int n = verifint();
