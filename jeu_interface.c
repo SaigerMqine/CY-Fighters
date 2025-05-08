@@ -6,9 +6,38 @@ typedef struct {
 
  
  void affichenom(Team t1){
-     printf("%s",t1.p1.name[])
-     printf("%s",t1.p2.name[])
-     printf("%s",t1.p3.name[])
+     printf("|  ");
+     printf("%s",t1.p1.name);
+     if(t1.p1.ActHP<=0){
+         printf(" |x|");
+     }
+     else{
+     printf(" |1|");
+     }
+     for(int i=strlen(t1.p1.name) ;i<36 ;i++){
+        printf(" ");
+    }
+     printf("%s",t1.p2.name);
+     if(t1.p2.ActHP<=0){
+         printf(" |x|");
+     }
+     else{
+     printf(" |2|");
+     }
+     for(int i=strlen(t1.p2.name) ;i<36 ;i++){
+        printf(" ");
+    }
+     printf("%s",t1.p3.name);
+     if(t1.p3.ActHP<=0){
+         printf(" |x|");
+     }
+     else{
+     printf(" |3|");
+     }
+    for(int i=strlen(t1.p3.name) ;i<25 ;i++){
+        printf(" ");
+    }
+     printf("|")
      // faut la faire j'ai pas eu le temps entre les print faut mettre les bon nombre d'espaces 
  }
  
@@ -167,6 +196,17 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          affichageteam(j.t1);
+         affichagefin();
+         printf("\n \n");
+         printf("┌");
+         for(int i=0;i<99-;i++){
+             printf("─");
+         }
+         printf("┐");
+         printf("\n| ");
+         for(int i=0;i<99-;i++){
+             printf(" ");
+         }
          afficheperso(j.t1.p1);
          affichagefin();
          
@@ -177,6 +217,17 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          affichageteam(j.t1);
+        affichagefin();
+         printf("\n \n");
+         printf("┌");
+         for(int i=0;i<99-;i++){
+             printf("─");
+         }
+         printf("┐");
+         printf("\n| ");
+         for(int i=0;i<99-;i++){
+             printf(" ");
+         }
          afficheperso(j.t1.p2);
          affichagefin();
          
@@ -187,55 +238,84 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          affichageteam(j.t1);
+         affichagefin();
+         printf("\n \n");
+         printf("┌");
+         for(int i=0;i<99-;i++){
+             printf("─");
+         }
+         printf("┐");
+         printf("\n| ");
+         for(int i=0;i<99-;i++){
+             printf(" ");
+         }
          afficheperso(j.t1.p3);
          affichagefin();
          
          
      }
      else if(j.t2.p1 == prochainperso()){
-         // on vera plus tard
+         affichageteam(j.t2);
+         affichagefin();
+         printf("\n \n");
+         affichageteam(j.t1);
+         affichagefin();
+         printf("\n \n");
+         printf("┌");
+         for(int i=0;i<99-;i++){
+             printf("─");
+         }
+         printf("┐");
+         printf("\n| ");
+         for(int i=0;i<99-;i++){
+             printf(" ");
+         }
+         afficheperso(j.t2.p1);
+         affichagefin();
+         
+         
      }
      else if(j.t2.p2 == prochainperso()){
+         affichageteam(j.t2);
+         affichagefin();
+         printf("\n \n");
+         affichageteam(j.t1);
+         affichagefin();
+         printf("\n \n");
+         printf("┌");
+         for(int i=0;i<99-;i++){
+             printf("─");
+         }
+         printf("┐");
+         printf("\n| ");
+         for(int i=0;i<99-;i++){
+             printf(" ");
+         }
+         afficheperso(j.t2.p2);
+         affichagefin();
          
      }
      else if(j.t2.p3 == prochainperso()){
+         affichageteam(j.t2);
+         affichagefin();
+         printf("\n \n");
+         affichageteam(j.t1);
+         affichagefin();
+         printf("\n \n");
+         printf("┌");
+         for(int i=0;i<99-;i++){
+             printf("─");
+         }
+         printf("┐");
+         printf("\n| ");
+         for(int i=0;i<99-;i++){
+             printf(" ");
+         }
+         afficheperso(j.t2.p3);
+         affichagefin();
          
      }
     
 }
 
-void affichageai(jeu j){
-     if(j.t1.p1 == prochainperso()){
-         affichageteam(j.t2);
-         affichagefin();
-         printf("\n \n");
-         affichageteam(j.t1);
-         afficheperso(j.t1.p1);
-         affichagefin();
-         
-         
-     }
-     else if(j.t1.p2 == prochainperso()){
-         affichageteam(j.t2);
-         affichagefin();
-         printf("\n \n");
-         affichageteam(j.t1);
-         afficheperso(j.t1.p2);
-         affichagefin();
-         
-         
-     }
-     else if(j.t1.p3 == prochainperso()){
-         affichageteam(j.t2);
-         affichagefin();
-         printf("\n \n");
-         affichageteam(j.t1);
-         afficheperso(j.t1.p3);
-         affichagefin();
-         
-         
-     }
-     else{
-         // on vera plus tard
-     }
-}
+
