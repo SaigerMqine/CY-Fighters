@@ -1,0 +1,20 @@
+Nom: Rajone
+MaxHP: 190.0
+ActHP: 190.0
+ATK: 40.0
+DEF: 10.0
+RES: 15.0
+SPD: 100.0
+ATK_bar: 0.0
+
+Skill1: chargeur
+Skill1_Val: 1.5
+Skill1_Duration: 1.0
+Skill1_CD: 3.0
+Skill1_Desc: augmente l'ATK de 50% au prochain tour.
+
+Skill2: toile élek
+Skill2_Val: 0.5
+Skill2_Duration: 1.0
+Skill2_CD: 5.0
+Skill2_Desc: Divise la vitesse de l'ennemi par 2 jusqu'à son prochain tour.
