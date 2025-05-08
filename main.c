@@ -51,6 +51,64 @@ int main(){
     c1.ch_skill1 = Rugissement;
     c1.ch_skill2 = Hurlement_de_chasse;
 
+    
+    Skill sk1;
+    strcpy(sk1.name , "coup de sabre lazer");
+    sk1.value =2;
+    sk1.duration =1;
+    sk1.cd=5 ;
+    strcpy(sk1.description, "double ses propre degat");
+    
+    Skill sk2;
+    strcpy(sk2.name, "force");
+    sk2.value=2;
+    sk2.duration=2;
+    sk2.cd=4;
+    strcpy(sk2.description,"la defence est doublé");
+
+
+    
+    Character perso1;
+    strcpy(perso1.name , "yoda");
+    perso1.MaxHP= 300;
+    perso1.ActHP= 300;
+    perso1.ATK=50;
+    perso1.DEF=10;
+    perso1.RES=10;
+    perso1.SPD=80
+    perso1.ATK_bar=0;
+    perso1.ch_skill1= coup_de_sabre_lazer;
+    perso1.ch_skill2=force;
+
+
+
+    Skill sk3;
+    strcpy(sk3.name,"soin");
+    sk3.value=0.3;
+    sk3.duration=100;
+    sk3.cd=6;
+    strcpy(sk3.description, "donne 30 pourcent des hp max");
+    
+    Skill sk4;
+    strcpy(sk4.name, "buff");
+    sk4.value=2;
+    sk4.duration=1;
+    sk4.cd=5;
+    strcpy(sk4.description, "double les degats d'un allier");
+
+
+    Character perso2;
+    strcpy(perso2.name , "ange");
+    perso2.MaxHP= 230
+    perso2.ActHP=230;
+    perso2.ATK=20;
+    perso2.DEF=12;
+    perso2.RES=10;
+    perso2.SPD=72;
+    perso2.ATK_bar=0;
+    perso2.ch_skill1= soin;
+    perso2.ch_skill2= buff;
+
     printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");
     int n = verifint();
     while(n != 1 && n != 2){
