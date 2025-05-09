@@ -6,6 +6,7 @@ int mode(){
     int d=0;
     int n = 0;
     printf("tape 1 pour jouer contre l'ordinateur \ntape 2 pour jouer contre un ami\n");
+    d = verifint();
     while (d!= 1 && d!= 2){
         printf("Erreur, Tape 1 ou 2\n");
      d = verifint();
