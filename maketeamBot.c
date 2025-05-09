@@ -8,8 +8,6 @@ Team MakeTeam(Character characters[], int nb) {
         for (int j = 0; j < nb; j++) afficher_perso(characters[j], j);
         printf("Choisissez le personnage %d (1 à %d) : ", i + 1, nb);
         int choix = verifint() - 1;
-
-        
         while (choix!= 1 && choix!= 2 && choix!= 3 && choix!= 4 && choix!= 5 && choix!= 0){
             printf("Erreur, Tape  un perso valide \n");
             choix = verifint()-1;
