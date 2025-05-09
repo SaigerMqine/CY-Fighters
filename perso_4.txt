@@ -1,0 +1,20 @@
+Nom: ange
+MaxHP: 230.0
+ActHP: 230.0
+ATK: 20.0
+DEF: 12.0
+RES: 10.0
+SPD: 72.0
+ATK_bar: 0.0
+
+Skill1: soin
+Skill1_Val: 0.3
+Skill1_Duration: 1000000
+Skill1_CD: 5.0
+Skill1_Desc: soigne 30% des HP max.
+
+Skill2: buff
+Skill2_Val: 2.0
+Skill2_Duration: 1.0
+Skill2_CD: 5.0
+Skill2_Desc: Double les dégats d'un allié.
