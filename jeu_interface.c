@@ -165,6 +165,7 @@
      printf("┐");
      printf("\n| ");
      affichenom(t1);
+     printf("\n");
      afficheeffet();
      hpsp(t1.p1,t1.p2,t1.p3);
      printf("\n|");
@@ -186,8 +187,8 @@
      printf("┘");
  }
  
-void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvoie le perso qui attaque   
-     if(j.t1.p1 == prochainperso()){
+void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvoie le perso qui attaque   
+     if(&j.t1.p1 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -195,12 +196,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t1.p1);
@@ -208,7 +209,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t1.p2 == prochainperso()){
+     else if(&j.t1.p2 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -216,12 +217,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
         affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t1.p2);
@@ -229,7 +230,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t1.p3 == prochainperso()){
+     else if(&j.t1.p3 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -237,12 +238,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t1.p3);
@@ -250,7 +251,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t2.p1 == prochainperso()){
+     else if(&j.t2.p1 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -258,12 +259,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t2.p1);
@@ -271,7 +272,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t2.p2 == prochainperso()){
+     else if(&j.t2.p2 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -279,19 +280,19 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t2.p2);
          affichagefin();
          
      }
-     else if(j.t2.p3 == prochainperso()){
+     else if(&j.t2.p3 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -299,12 +300,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t2.p3);
