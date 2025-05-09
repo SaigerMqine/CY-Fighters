@@ -1,4 +1,4 @@
-float calcul_des_dégats_pris(character p1,character p2){ //p1=perso attaqué, p2=perso qui attaque
+float calcul_des_dégats_pris(Character p1,Character p2){ //p1=perso attaqué, p2=perso qui attaque
     int i=0;
     i=(rand()%100)+1;
     if(i<=p1.RES){
