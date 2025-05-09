@@ -1,9 +1,9 @@
 Character maxi(Character p1,Character p2){            // le perso avec la plus grande atk_bar
-    if(p1.ATK_bar>=P2.ATK_bar){
-        return p1
+    if(p1.ATK_bar>=p2.ATK_bar){
+        return p1;
     }
     else{
-        return p2
+        return p2;
     }
 }
 
