@@ -30,3 +30,8 @@ typedef struct{     // create class special skills
     Character p2;
     Character p3;
 }Team;
+
+typedef struct {
+    Team t1;
+    Team t2;
+} Jeu
