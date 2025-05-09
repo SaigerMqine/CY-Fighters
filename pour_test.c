@@ -36,7 +36,7 @@ typedef struct{     // create class special skills
 typedef struct {
     Team t1;
     Team t2;
-} Jeu
+} Jeu;
 
 int verifint(){
     int d=0;
@@ -69,28 +69,13 @@ else {
     return name;
 }
 
-void afficher_perso(Character c, int index) {
-    printf(" ┌────────────────────────────────┐\n");
-    printf(" │ Personnage %d : %s │\n", index + 1, c.name);
-    printf(" ├────────────────────────────────┤\n");
-    printf(" │ HP  : %.1f │\n", c.MaxHP);
-    printf(" │ ATK : %.1f │\n", c.ATK);
-    printf(" │ DEF : %.1f │\n", c.DEF);
-    printf(" │ RES : %.1f │\n", c.RES);
-    printf(" │ SPD : %.1f │\n", c.SPD);
-    printf(" │ Skill 1 : %s │\n", c.ch_skill1.name);
-    printf(" │ Skill 2 : %s │\n", c.ch_skill2.name);
-    printf(" └────────────────────────────────┘\n");
-}
-
 Team MakeTeam(Character characters[], int nb) {
     Team team1;
     printf("Entrez le nom de votre équipe : ");
-    team1.name = verifname();
+    strcpy(team1.name, verifname());
     int choisis[3] = {-1, -1, -1};
     int i = 0;
     while (i < 3) {
-        for (int j = 0; j < nb; j++) afficher_perso(characters[j], j);
         printf("Choisissez le personnage %d (1 à %d) : ", i + 1, nb);
         int choix = verifint() - 1;
         while (choix!= 1 && choix!= 2 && choix!= 3 && choix!= 4 && choix!= 5 && choix!= 0){
@@ -159,7 +144,6 @@ Team MakeTeamJ1(Character characters[], int nb) {
     int choisis[3] = {-1, -1, -1};
     int i = 0;
     while (i < 3) {
-        for (int j = 0; j < nb; j++) afficher_perso(characters[j], j);
         printf("Choisissez le personnage %d (1 à %d) : ", i + 1, nb);
         int choix = verifint() - 1;
         while (choix!= 1 && choix!= 2 && choix!= 3 && choix!= 4 && choix!= 5 && choix!= 0){
@@ -194,11 +178,10 @@ Team MakeTeamJ1(Character characters[], int nb) {
 Team MakeTeamJ2(Character characters[], int nb) {
     Team team2;
     printf("Entrez le nom de votre équipe : ");
-    strcpy(team1.name, verifname());
+    strcpy(team2.name, verifname());
     int choisis[3] = {-1, -1, -1};
     int i = 0;
     while (i < 3) {
-        for (int j = 0; j < nb; j++) afficher_perso(characters[j], j);
         printf("Choisissez le personnage %d (1 à %d) : ", i + 1, nb);
         int choix = verifint() - 1;
         while (choix!= 1 && choix!= 2 && choix!= 3 && choix!= 4 && choix!= 5 && choix!= 0){
@@ -264,87 +247,87 @@ Team MakeTeamJ2(Character characters[], int nb) {
     for(int i=strlen(t1.p3.name) ;i<25 ;i++){
         printf(" ");
     }
-     printf("|")
+     printf("|");
      // faut la faire j'ai pas eu le temps entre les print faut mettre les bon nombre d'espaces 
  }
  
  void hpsp(Character p1,Character p2, Character p3 ){
      printf("| [ ");
-    for(int i=0; i<(p1.ActHp) ;i=i+25){
+    for(int i=0; i<(p1.ActHP) ;i=i+25){
     printf("#");
     }
-    for(int i=p1.ActHp ;i<=500 ;i=i+25){
+    for(int i=p1.ActHP ;i<=500 ;i=i+25){
         printf(" ");
     }
     printf("]");
     printf("            ");
     printf("[ ");
-    for(int i=0; i<(p2.ActHp) ;i=i+25){
+    for(int i=0; i<(p2.ActHP) ;i=i+25){
     printf("#");
     }
-    for(int i=p2.ActHp ;i<=500 ;i=i+25){
+    for(int i=p2.ActHP ;i<=500 ;i=i+25){
         printf(" ");
     }
     printf("]");
     printf("            ");
     printf("[ ");
-    for(int i=0; i<(p3.ActHp) ;i=i+25){
+    for(int i=0; i<(p3.ActHP) ;i=i+25){
     printf("#");
     }
-    for(int i=p3.ActHp ;i<=500 ;i=i+25){
+    for(int i=p3.ActHP ;i<=500 ;i=i+25){
         printf(" ");
     }
     printf("] |");
 
     printf("\n");
     printf("| [ ");
-    for(int i=0; i<(p1.Atk_bar) ;i=i+25){
+    for(int i=0; i<(p1.ATK_bar) ;i=i+25){
     printf(">");
     }
-    for(int i=p1.Atk_bar ;i<=500 ;i=i+25){
+    for(int i=p1.ATK_bar ;i<=500 ;i=i+25){
         printf(" ");
     }
     printf("]");
     printf("            ");
     printf("[ ");
-    for(int i=0; i<(p2.Atk_bar) ;i=i+25){
+    for(int i=0; i<(p2.ATK_bar) ;i=i+25){
     printf(">");
     }
-    for(int i=p2.Atk_bar  ;i<=500 ;i=i+25){
+    for(int i=p2.ATK_bar  ;i<=500 ;i=i+25){
         printf(" ");
     }
     printf("]");
     printf("            ");
     printf("[ ");
-    for(int i=0; i<(p3.Atk_bar) ;i=i+25){
+    for(int i=0; i<(p3.ATK_bar) ;i=i+25){
     printf(">");
     }
-    for(int i=p3.Atk_bar  ;i<=500 ;i=i+25){
+    for(int i=p3.ATK_bar  ;i<=500 ;i=i+25){
         printf(" ");
     }
     printf("] |");
  }
  
- void afficheeffet(){
+ void affiche_effet(){
      // il faut le faire
  }
 
   
- void afficheperso(character p1){
+ void afficheperso(Character p1){
      printf("|   %s",p1.name);
-     for(int i=strlen(p1.name);i<95-;i++){
+     for(int i=strlen(p1.name);i<95;i++){
          printf(" ");
      }
      printf("|\n");
      printf("|   TECHNIQUES SPECIALES");
-     for(int i=0;i<75-;i++){
+     for(int i=0;i<75;i++){
          printf(" ");
      }
      printf("|\n");
      printf("|      |1| attaque normal(peut etre utiliser a chaque tour)                                            |");
      if (p1.ch_skill1.cd == 0){
          printf("|      |2|");
-         printf(" %s (duree:%d tours)",p1.ch_skill1.name ,p1.ch_skill1.duration);
+         printf(" %s (duree:%f tours)",p1.ch_skill1.name ,p1.ch_skill1.duration);
          for(int i=strlen(p1.ch_skill1.name);i<73;i++){
          printf(" ");
         }
@@ -352,7 +335,7 @@ Team MakeTeamJ2(Character characters[], int nb) {
      }
      else{
          printf("|      |-|");
-         printf(" %s (recharge: %d duree:%d tours)",p1.ch_skill2.name,p1.ch_skill2.cd ,p1.ch_skill2.duration);
+         printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill2.name,p1.ch_skill2.cd ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill1.name);i<61;i++){
          printf(" ");
         }
@@ -366,7 +349,7 @@ Team MakeTeamJ2(Character characters[], int nb) {
      
           if (p1.ch_skill2.cd == 0){
          printf("|      |3|");
-         printf(" %s (duree:%d tours)",p1.ch_skill2.name ,p1.ch_skill2.duration);
+         printf(" %s (duree:%f tours)",p1.ch_skill2.name ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill2.name);i<73;i++){
          printf(" ");
         }
@@ -374,7 +357,7 @@ Team MakeTeamJ2(Character characters[], int nb) {
      }
      else{
          printf("|      |-|");
-         printf(" %s (recharge: %d duree:%d tours)",p1.ch_skill2.name,p1.ch_skill2.cd ,p1.ch_skill2.duration);
+         printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill2.name,p1.ch_skill2.cd ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill2.name);i<61;i++){
              printf(" ");
         }
@@ -391,13 +374,13 @@ Team MakeTeamJ2(Character characters[], int nb) {
  
  void affichageteam(Team t1){
      printf("┌──[%s]",t1.name);// il faut faire les 2 team
-     for(int i=strlen(t1.name);i<94-;i++){
+     for(int i=strlen(t1.name);i<94;i++){
          printf("─");
      }
      printf("┐");
      printf("\n| ");
      affichenom(t1);
-     afficheeffet();
+     affiche_effet();
      hpsp(t1.p1,t1.p2,t1.p3);
      printf("\n|");
      for (int i=0;i<98;i++){
@@ -418,8 +401,8 @@ Team MakeTeamJ2(Character characters[], int nb) {
      printf("┘");
  }
  
-void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvoie le perso qui attaque   
-     if(j.t1.p1 == prochainperso()){
+void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvoie le perso qui attaque   
+     if(j.t1.p1 == prochainperso(j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -427,12 +410,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t1.p1);
@@ -440,7 +423,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t1.p2 == prochainperso()){
+     else if(j.t1.p2 == prochainperso(j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -448,12 +431,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
         affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t1.p2);
@@ -461,7 +444,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t1.p3 == prochainperso()){
+     else if(j.t1.p3 == prochainperso(j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -469,12 +452,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t1.p3);
@@ -482,7 +465,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t2.p1 == prochainperso()){
+     else if(j.t2.p1 == prochainperso(j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -490,12 +473,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t2.p1);
@@ -503,7 +486,7 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          
          
      }
-     else if(j.t2.p2 == prochainperso()){
+     else if(j.t2.p2 == prochainperso(j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -511,19 +494,19 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t2.p2);
          affichagefin();
          
      }
-     else if(j.t2.p3 == prochainperso()){
+     else if(j.t2.p3 == prochainperso(j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
@@ -531,12 +514,12 @@ void affichage1v1(jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          affichagefin();
          printf("\n \n");
          printf("┌");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf("─");
          }
          printf("┐");
          printf("\n| ");
-         for(int i=0;i<99-;i++){
+         for(int i=0;i<99;i++){
              printf(" ");
          }
          afficheperso(j.t2.p3);
@@ -561,7 +544,7 @@ Character prochainperso(Jeu j){            // le prochain personnage a attaquer
     }
 }
 
-float calcul_des_dégats_pris(character p1,character p2){ //p1=perso attaqué, p2=perso qui attaque
+float dégats_pris(character p1,character p2){ //p1=perso attaqué, p2=perso qui attaque
     int i=0;
     i=(rand()%100)+1;
     if(i<=p1.RES){
@@ -574,8 +557,8 @@ float calcul_des_dégats_pris(character p1,character p2){ //p1=perso attaqué, p
 }
 
 void ordifacile(){           //fonction pour jouer contre l'ordi mais c'est le debut et il faut mettre les bons perso dans le tableau 
-    MakeTeam(les characters);
-    MakeTeambot(les characters);
+    MakeTeam(tabC);
+    MakeTeambot(tabC);
     while(Team1.p1.ActHP > 0 && Team1.p2.ActHP > 0 && Team1.p3.ActHP > 0 || Team2.p1.ActHP > 0 && Team2.p2.ActHP > 0 && Team2.p3.ActHP > 0){
         Team1.p1.ATK_bar=Team1.p1.ATK_bar+Team1.p1.SPD;
         Team1.p2.ATK_bar=Team1.p2.ATK_bar+Team1.p2.SPD;
@@ -586,13 +569,12 @@ void ordifacile(){           //fonction pour jouer contre l'ordi mais c'est le d
                 if (Team1.p1.ATK_bar >=500 ||   Team1.p2.ATK_bar >= 500 || Team1.p3.ATK_bar >= 500 || Team2.p1.ATK_bar >= 500 || Team2.p2.ATK_bar >= 500 || Team2.p3.ATK_bar >= 500){
                 
                     
-                    AffichageDuPerso()   // dans l'affichage on met aussi les verifint pour choix de l'atk
+                    affichage1v1(j);  // dans l'affichage on met aussi les verifint pour choix de l'atk
                 
                 }
             }      
         }
-    }
-}// je vous laisse l'ameliorer normalement le debut sera toujours pareil pour chaque ordi et pour le 1 contre 1 il faudra juste changer ChoixOrdiEquipe aussi j ai mis des fonction mais je sais pas quelle nom vous voulez mettre 
+// je vous laisse l'ameliorer normalement le debut sera toujours pareil pour chaque ordi et pour le 1 contre 1 il faudra juste changer ChoixOrdiEquipe aussi j ai mis des fonction mais je sais pas quelle nom vous voulez mettre 
 
 int mode(){
     //  n=1 facile n=2 difficile n=3 infernal n=4 1v1
@@ -642,8 +624,8 @@ int main(){
     c1.RES = 10;
     c1.SPD = 107;
     c1.ATK_bar = 0;
-    c1.ch_skill1 = Rugissement;
-    c1.ch_skill2 = Hurlement_de_chasse;
+    c1.ch_skill1 = S1;
+    c1.ch_skill2 = S2;
 
     
     Skill sk1;
@@ -669,10 +651,10 @@ int main(){
     perso1.ATK=50;
     perso1.DEF=10;
     perso1.RES=10;
-    perso1.SPD=80
+    perso1.SPD=80;
     perso1.ATK_bar=0;
-    perso1.ch_skill1= coup_de_sabre_lazer;
-    perso1.ch_skill2=force;
+    perso1.ch_skill1= sk1;
+    perso1.ch_skill2= sk2;
 
 
 
@@ -700,8 +682,8 @@ int main(){
     perso2.RES=10;
     perso2.SPD=72;
     perso2.ATK_bar=0;
-    perso2.ch_skill1= soin;
-    perso2.ch_skill2= buff;
+    perso2.ch_skill1= sk3;
+    perso2.ch_skill2= sk4;
 
 
     printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");
@@ -716,16 +698,16 @@ int main(){
     }
     switch(mode()){ // je sais pas si c'est bon ou pas comme on a pas les fonctions mais je le met quand meme 
         case 1:
-        ordifacile()
+        ordifacile();
         break;
         case 2 :
-        ordimoyen()
+        ordimoyen();
         break;
         case 3 :
-        ordidifficile()
+        ordidifficile();
         break;
         case 4 :
-        1vs1()
+        1vs1();
         break;
     }
     return 0;
