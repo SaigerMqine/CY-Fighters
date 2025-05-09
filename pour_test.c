@@ -3,6 +3,8 @@
 #include <string.h>
 #include <time.h>
 
+#define Max_name_length 25
+
 typedef struct{     // create class special skills
     char name[50];
     float value;
