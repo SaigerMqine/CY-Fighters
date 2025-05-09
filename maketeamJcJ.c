@@ -1,4 +1,4 @@
-Team MakeTeam(Character characters[], int nb) {
+Team MakeTeamJ1(Character characters[], int nb) {
     Team team1;
     printf("Entrez le nom de votre équipe : ");
     strcpy(team1.name, verifname());
@@ -33,7 +33,7 @@ Team MakeTeam(Character characters[], int nb) {
     return team1;
 }
 
-Team MakeTeam2(Character characters[], int nb) {
+Team MakeTeamJ2(Character characters[], int nb) {
     Team team2;
     printf("Entrez le nom de votre équipe : ");
     strcpy(team1.name, verifname());
