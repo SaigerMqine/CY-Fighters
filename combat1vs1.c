@@ -24,10 +24,17 @@ Character tab2[3];
             printf("quelle capacité voulez vous utiliser");
             n=verifint()
             if(n==1){
+                if (&jeu.t1.p1== prochainperso(%j) || if &jeu.t1.p2== prochainperso(%j) || if &jeu.t1.p3== prochainperso(%j)){
                 printf("quelle personnage voulez vous cibler");
                 d=verifint();
-                calcul_des_dégats_pris(prochainperso(&j),tab[d]);
-        }
-    }   
-}
-       
+                calcul_des_dégats_pris(prochainperso(&j),tab2[d]);
+                }
+                else {
+                    printf("quelle personnage voulez vous cibler");
+                d=verifint();
+                calcul_des_dégats_pris(prochainperso(&j),tab1[d]);
+                }
+           }
+       }   
+    }
+}       
