@@ -5,7 +5,7 @@ float calcul_des_dégats_pris(Character* p1,Character p2){ //p1=perso attaqué, 
         return p1.actHP;
     }
     else{
-        p1->actHP=p1.actHP-p2.ATK*(1-(p1.DEF/100));
-        return p1.actHP;
+        p1->actHP=p1.actHP-p2.ATK*(1-(p1->DEF/100));
+        return p1->actHP;
     }
 }
