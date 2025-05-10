@@ -123,10 +123,10 @@ int main(){
     }
     switch(mode()){ // je sais pas si c'est bon ou pas comme on a pas les fonctions mais je le met quand meme 
         case 1:
-        ordifacile()
+        botfacile()
         break;
         case 2 :
-        ordimoyen()
+        botmoyen()
         break;
         case 3 :
         ordidifficile()
