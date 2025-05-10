@@ -11,10 +11,12 @@ Skill1: soin
 Skill1_Val: 0.3
 Skill1_Duration: 1000000
 Skill1_CD: 5.0
+Skill1_DCD: 5.0
 Skill1_Desc: soigne 30% des HP max.
 
 Skill2: buff
 Skill2_Val: 2.0
 Skill2_Duration: 1.0
 Skill2_CD: 5.0
+Skill2_DCD: 5.0
 Skill2_Desc: Double les dégats d'un allié.
