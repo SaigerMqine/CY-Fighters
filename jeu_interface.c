@@ -121,7 +121,7 @@
      }
      else{
          printf("|      |-|");
-         printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill1.name,p1.ch_skill1.cd ,p1.ch_skill2.duration);
+         printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill1.name,p1.ch_skill1.dcd ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill1.name);i<46;i++){
          printf(" ");
         }
@@ -143,7 +143,7 @@
      }
      else{
          printf("|      |-|");
-         printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill2.name,p1.ch_skill2.cd ,p1.ch_skill2.duration);
+         printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill2.name,p1.ch_skill2.dcd ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill2.name);i<46;i++){
              printf(" ");
         }
