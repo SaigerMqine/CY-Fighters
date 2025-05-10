@@ -185,18 +185,18 @@ void botdifficile(){
             else if(prochainperso(jeu)->ch_skill1.dcd == 0){
                 // fonction skill1 du perso
                 
-                prochainperso(jeu)->ch_skill1.cdc ==prochainperso(jeu)->ch_skill1.cd ;
-                if(prochainperso(jeu)->ch_skill2.cdc != 0){
-                    prochainperso(jeu)->ch_skill2.cdc -= 1;
+                prochainperso(jeu)->ch_skill1.dcd ==prochainperso(jeu)->ch_skill1.cd ;
+                if(prochainperso(jeu)->ch_skill2.dcd != 0){
+                    prochainperso(jeu)->ch_skill2.dcd -= 1;
                 }
                 
             }
             else if(prochainperso(jeu)->ch_skill2.dcd == 0){
                 // fonction skill2 du perso
                 
-                prochainperso(jeu)->ch_skill2.cdc ==prochainperso(jeu)->ch_skill2.cd ;
-                if(prochainperso(jeu)->ch_skill1.cdc != 0){
-                    prochainperso(jeu)->ch_skill1.cdc -= 1;
+                prochainperso(jeu)->ch_skill2.dcd ==prochainperso(jeu)->ch_skill2.cd ;
+                if(prochainperso(jeu)->ch_skill1.dcd != 0){
+                    prochainperso(jeu)->ch_skill1.dcd -= 1;
                 }
                 
             }
