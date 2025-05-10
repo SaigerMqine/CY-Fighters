@@ -11,10 +11,12 @@ Skill1: coup de vent
 Skill1_Val: 2.0
 Skill1_Duration: 2.0
 Skill1_CD: 4.0
+Skill1_DCD: 4.0
 Skill1_Desc: double la vitesse pendant 2 tour.
 
 Skill2: atterissage
 Skill2_Val: 0.2
 Skill2_Duration: 1000000.0
 Skill2_CD: 4.0
+Skill2_DCD: 4.0
 Skill2_Desc: soigne 20% des HP max.
