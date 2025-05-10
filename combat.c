@@ -169,8 +169,15 @@ void botdifficile(){
             }
         }
         else if(jeu.t2.p1.ActHP >= 500 || jeu.t2.p2.ActHP >= 500 || jeu.t2.p3.ActHP >= 500){
+            prochainperso(jeu)->ch_skill1.dcd -= 1;
+            prochainperso(jeu)->ch_skill2.dcd -= 1;
+            if (prochainperso(jeu)->ch_skill2.dcd<0){
+                prochainperso(jeu)->ch_skill2.dcd=0
+            }
+            if (prochainperso(jeu)->ch_skill1.dcd<0){
+                prochainperso(jeu)->ch_skill1.dcd=0
+            }
             if(prochainperso(jeu)->ch_skill1.dcd != 0 && prochainperso(jeu)->ch_skill2.dcd != 0){
-                prochainperso(jeu)->ch_skill1.dcd -= 1 && prochainperso(jeu)->ch_skill2.dcd -= 1;
             affichage1vs1(jeu);
             if(tab[0].ActHP<=tab[1].ActHP&&tab[0].ActHP<=tab[2].ActHP){
             calcul_des_dégats_pris(prochainperso(&jeu),tab[0]);
@@ -186,19 +193,11 @@ void botdifficile(){
                 // fonction skill1 du perso
                 
                 prochainperso(jeu)->ch_skill1.dcd ==prochainperso(jeu)->ch_skill1.cd ;
-                if(prochainperso(jeu)->ch_skill2.dcd != 0){
-                    prochainperso(jeu)->ch_skill2.dcd -= 1;
-                }
-                
             }
             else if(prochainperso(jeu)->ch_skill2.dcd == 0){
                 // fonction skill2 du perso
                 
-                prochainperso(jeu)->ch_skill2.dcd ==prochainperso(jeu)->ch_skill2.cd ;
-                if(prochainperso(jeu)->ch_skill1.dcd != 0){
-                    prochainperso(jeu)->ch_skill1.dcd -= 1;
-                }
-                
+                prochainperso(jeu)->ch_skill2.dcd ==prochainperso(jeu)->ch_skill2.cd ; 
             }
         }
         if(jeu.t1.p1.ActHP <= 0){
