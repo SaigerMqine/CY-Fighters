@@ -175,7 +175,7 @@ void botdifficile(){
                 prochainperso(jeu)->ch_skill2.dcd=0
             }
             if (prochainperso(jeu)->ch_skill1.dcd<0){
-                prochainperso(jeu)->ch_skill1.dcd=0
+                prochainperso(jeu)->ch_skill1.dcd=0;
             }
             if(prochainperso(jeu)->ch_skill1.dcd != 0 && prochainperso(jeu)->ch_skill2.dcd != 0){
             affichage1vs1(jeu);
