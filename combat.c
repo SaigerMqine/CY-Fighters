@@ -29,7 +29,7 @@ void botfacile(){
                 printf("quelle personnage voulez vous cibler");
                 d=verifint() -1;
                 while (tab2[d].ActHP<=0){
-                    printf("ce personnageest deja mort reessayer")
+                    printf("ce personnageest deja mort reessayer");
                     d=verifint() -1;
                 }
                calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
@@ -95,7 +95,7 @@ void botmoyen(){
                 printf("quelle personnage voulez vous cibler");
                 d=verifint() -1;
                 while (tab2[d].ActHP<=0){
-                    printf("ce personnageest deja mort reessayer")
+                    printf("ce personnageest deja mort reessayer");
                     d=verifint() -1;
                 }
                calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
@@ -162,7 +162,7 @@ void botdifficile(){
                 printf("quelle personnage voulez vous cibler");
                 d=verifint() -1;
                 while (tab2[d].ActHP<=0){
-                    printf("ce personnageest deja mort reessayer")
+                    printf("ce personnageest deja mort reessayer");
                     d=verifint() -1;
                 }
                calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
