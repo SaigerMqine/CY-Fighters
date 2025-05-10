@@ -34,7 +34,24 @@ void botfacile(){
             affichage1vs1(jeu);
             calcul_des_dégats_pris(prochainperso(&jeu),tab1[(rand()%3)+1]);
     }
-    
+     if(jeu.t1.p1.ActHP <= 0){
+           jeu.t1.p1.SPD=0;
+           }
+    if(jeu.t1.p2.ActHP <= 0){
+   jeu.t1.p2.SPD=0;
+   } 
+    if(jeu.t1.p3.ActHP <= 0){
+   jeu.t1.p3.SPD=0;
+   } 
+    if(jeu.t2.p1.ActHP <= 0){
+   jeu.t2.p1.SPD=0;
+   } 
+    if(jeu.t2.p2.ActHP <= 0){
+   jeu.t2.p2.SPD=0;
+   } 
+    if(jeu.t2.p3.ActHP <= 0){
+   jeu.t2.p3.SPD=0;
+   } 
     
     
     
@@ -81,4 +98,21 @@ void botmoyen(){
             calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
             }
     }
-       
+      if(jeu.t1.p1.ActHP <= 0){
+           jeu.t1.p1.SPD=0;
+           }
+            if(jeu.t1.p2.ActHP <= 0){
+           jeu.t1.p2.SPD=0;
+           } 
+            if(jeu.t1.p3.ActHP <= 0){
+           jeu.t1.p3.SPD=0;
+           } 
+            if(jeu.t2.p1.ActHP <= 0){
+           jeu.t2.p1.SPD=0;
+           } 
+            if(jeu.t2.p2.ActHP <= 0){
+           jeu.t2.p2.SPD=0;
+           } 
+            if(jeu.t2.p3.ActHP <= 0){
+           jeu.t2.p3.SPD=0;
+           }  
