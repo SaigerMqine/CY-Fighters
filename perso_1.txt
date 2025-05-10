@@ -11,10 +11,12 @@ Skill1: coup de sabre laser
 Skill1_Val: 2.0
 Skill1_Duration: 1.0
 Skill1_CD: 5.0
+Skill1_DCD: 5.0
 Skill1_Desc: double ses dégats infligés au prochain tour.
 
 Skill2: Force
 Skill2_Val: 2.0
 Skill2_Duration: 2.0
 Skill2_CD: 4.0
+Skill2_DCD: 4.0
 Skill2_Desc: La défense est doublée pendant 2 tours.
