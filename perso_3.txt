@@ -11,10 +11,12 @@ Skill1: chargeur
 Skill1_Val: 1.5
 Skill1_Duration: 1.0
 Skill1_CD: 3.0
+Skill1_DCD: 3.0
 Skill1_Desc: augmente l'ATK de 50% au prochain tour.
 
 Skill2: toile élek
 Skill2_Val: 0.5
 Skill2_Duration: 1.0
 Skill2_CD: 5.0
+Skill2_DCD: 5.0
 Skill2_Desc: Divise la vitesse de l'ennemi par 2 jusqu'à son prochain tour.
