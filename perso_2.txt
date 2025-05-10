@@ -11,10 +11,12 @@ Skill1: coup rapide
 Skill1_Val: 1.5
 Skill1_Duration: 1.0
 Skill1_CD: 3.0
+Skill1_DCD: 3.0
 Skill1_Desc: augmente la vitesse de 50% au prochain tour.
 
 Skill2: dash
 Skill2_Val: 10.0
 Skill2_Duration: 1.0
 Skill2_CD: 6.0
+Skill2_DCD: 6.0
 Skill2_Desc: resiste a toutes les attaques jusqu'au prochain tour.
