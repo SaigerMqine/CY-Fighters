@@ -71,13 +71,13 @@ void botmoyen(){
         }
         else if(jeu.t2.p1.ActHP >= 500 || jeu.t2.p2.ActHP >= 500 || jeu.t2.p3.ActHP >= 500){
             affichage1vs1(jeu);
-            if(tab[0].ActHP>=tab[1].ActHP&&tab[0].ActHP>=tab[2].ActHP){
+            if(tab[0].ActHP<=tab[1].ActHP && tab[0].ActHP<=tab[2].ActHP){
             calcul_des_dégats_pris(prochainperso(&jeu),tab[0]);
             }
-            else if(tab[1].ActHP>=tab[0].ActHP&&tab[1].ActHP>=tab[2].ActHP){
+            else if(tab[1].ActHP<tab[0].ActHP && tab[1].ActHP<=tab[2].ActHP){
             calcul_des_dégats_pris(prochainperso(&jeu),tab[1]);
             }
-            else if(tab[2].ActHP>=tab[1].ActHP&&tab[2].ActHP>=tab[0].ActHP){
+            else if(tab[2].ActHP<tab[1].ActHP && tab[2].ActHP<tab[0].ActHP){
             calcul_des_dégats_pris(prochainperso(&jeu),tab[2]);
             }
     }
