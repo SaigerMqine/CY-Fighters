@@ -186,6 +186,7 @@
      printf("┘");
  }
  
+
 void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvoie le perso qui attaque   
      if(&j.t1.p1 == prochainperso(&j)){
          affichageteam(j.t2);
@@ -199,8 +200,8 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
              printf("─");
          }
          printf("┐");
-         printf("\n| ");
-         for(int i=0;i<97;i++){
+         printf("\n|   (Team1)");
+         for(int i=0;i<88;i++){
              printf(" ");
          }
          printf("|");
@@ -221,8 +222,8 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
              printf("─");
          }
          printf("┐");
-         printf("\n| ");
-         for(int i=0;i<97;i++){
+         printf("\n|   (Team2)");
+         for(int i=0;i<88;i++){
              printf(" ");
          }
          printf("|");
@@ -243,8 +244,8 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
              printf("─");
          }
          printf("┐");
-         printf("\n| ");
-         for(int i=0;i<97;i++){
+         printf("\n|   (Team1)");
+         for(int i=0;i<88;i++){
              printf(" ");
          }
          printf("|");
@@ -265,8 +266,8 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
              printf("─");
          }
          printf("┐");
-         printf("\n| ");
-         for(int i=0;i<97;i++){
+         printf("\n|   (Team2)");
+         for(int i=0;i<88;i++){
              printf(" ");
          }
          printf("|");
@@ -287,8 +288,8 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
              printf("─");
          }
          printf("┐");
-         printf("\n| ");
-         for(int i=0;i<97;i++){
+         printf("\n|   (Team2)");
+         for(int i=0;i<88;i++){
              printf(" ");
          }
          printf("|");
@@ -308,8 +309,8 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
              printf("─");
          }
          printf("┐");
-         printf("\n| ");
-         for(int i=0;i<97;i++){
+         printf("\n|   (Team2)");
+         for(int i=0;i<88;i++){
              printf(" ");
          }
          printf("|");
