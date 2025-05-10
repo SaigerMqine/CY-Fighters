@@ -31,10 +31,28 @@ Character tab2[3];
                 }
                 else {
                     printf("quelle personnage voulez vous cibler");
-                d=verifint();
-                calcul_des_dégats_pris(prochainperso(&j),tab1[d]);
+                    d=verifint();
+                    calcul_des_dégats_pris(prochainperso(&j),tab1[d]);
                 }
            }
+           if(jeu.t1.p1.ActHP <= 0){
+           jeu.t1.p1.SPD=0;
+           }
+            if(jeu.t1.p2.ActHP <= 0){
+           jeu.t1.p2.SPD=0;
+           } 
+            if(jeu.t1.p3.ActHP <= 0){
+           jeu.t1.p3.SPD=0;
+           } 
+            if(jeu.t2.p1.ActHP <= 0){
+           jeu.t2.p1.SPD=0;
+           } 
+            if(jeu.t2.p2.ActHP <= 0){
+           jeu.t2.p2.SPD=0;
+           } 
+            if(jeu.t2.p3.ActHP <= 0){
+           jeu.t2.p3.SPD=0;
+           } 
        }   
     }
 }       
