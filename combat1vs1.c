@@ -27,11 +27,19 @@ Character tab2[3];
                 if (&jeu.t1.p1== prochainperso(%j) || if &jeu.t1.p2== prochainperso(%j) || if &jeu.t1.p3== prochainperso(%j)){
                 printf("quelle personnage voulez vous cibler");
                 d=verifint-1
+                    while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer")
+                    d=verifint() -1;
+                }
                 calcul_des_dégats_pris(prochainperso(&j),tab2[d]);
                 }
                 else {
                     printf("quelle personnage voulez vous cibler");
                     d=verifint();
+                    while (tab1[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer")
+                    d=verifint() -1;
+                }
                     calcul_des_dégats_pris(prochainperso(&j),tab1[d]);
                 }
            }
