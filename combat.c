@@ -103,14 +103,44 @@ void botmoyen(){
         }
         else if(jeu.t2.p1.ActHP >= 500 || jeu.t2.p2.ActHP >= 500 || jeu.t2.p3.ActHP >= 500){
             affichage1vs1(jeu);
-            if(tab[0].ActHP>=tab[1].ActHP&&tab[0].ActHP>=tab[2].ActHP){
-            calcul_des_dégats_pris(prochainperso(&jeu),tab[0]);
+                if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP<=tab1[2].ActHP){
+                    if(tab[0].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                }
             }
-            else if(tab[1].ActHP>=tab[0].ActHP&&tab[1].ActHP>=tab[2].ActHP){
-            calcul_des_dégats_pris(prochainperso(&jeu),tab[1]);
+            else if(tab1[1].ActHP<=tab1[0].ActHP && tab1[1].ActHP<=tab1[2].ActHP){
+            if(tab[1].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[0].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                }
             }
-            else if(tab[2].ActHP>=tab[1].ActHP&&tab[2].ActHP>=tab[0].ActHP){
-            calcul_des_dégats_pris(prochainperso(&jeu),tab[2]);
+            else if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP<=tab1[0].ActHP){
+            if(tab[2].ActHP==0){
+                        if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                }
             }
     }
     if(jeu.t1.p1.ActHP <= 0){
@@ -179,14 +209,44 @@ void botdifficile(){
             }
             if(prochainperso(jeu)->ch_skill1.dcd != 0 && prochainperso(jeu)->ch_skill2.dcd != 0){
             affichage1vs1(jeu);
-            if(tab[0].ActHP<=tab[1].ActHP&&tab[0].ActHP<=tab[2].ActHP){
-            calcul_des_dégats_pris(prochainperso(&jeu),tab[0]);
+                if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP<=tab1[2].ActHP){
+                    if(tab[0].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                }
             }
-            else if(tab[1].ActHP<=tab[0].ActHP&&tab[1].ActHP<=tab[2].ActHP){
-            calcul_des_dégats_pris(prochainperso(&jeu),tab[1]);
+            else if(tab1[1].ActHP<=tab1[0].ActHP && tab1[1].ActHP<=tab1[2].ActHP){
+            if(tab[1].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[0].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                }
             }
-            else if(tab[2].ActHP<=tab[1].ActHP&&tab[2].ActHP<=tab[0].ActHP){
-            calcul_des_dégats_pris(prochainperso(&jeu),tab[2]);
+            else if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP<=tab1[0].ActHP){
+            if(tab[2].ActHP==0){
+                        if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                }
             }
             }
             else if(prochainperso(jeu)->ch_skill1.dcd == 0){
@@ -199,7 +259,7 @@ void botdifficile(){
                 
                 prochainperso(jeu)->ch_skill2.dcd ==prochainperso(jeu)->ch_skill2.cd ; 
             }
-        }
+            }
         if(jeu.t1.p1.ActHP <= 0){
         jeu.t1.p1.SPD=0;
            }
