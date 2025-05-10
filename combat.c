@@ -32,7 +32,7 @@ void botfacile(){
         }
         else if(jeu.t2.p1.ActHP >= 500 || jeu.t2.p2.ActHP >= 500 || jeu.t2.p3.ActHP >= 500){
             affichage1vs1(jeu);
-            calcul_des_dégats_pris(prochainperso(&jeu),tab[(rand()%3)+1]);
+            calcul_des_dégats_pris(prochainperso(&jeu),tab1[(rand()%3)+1]);
     }
     
     
