@@ -10,6 +10,7 @@ typedef struct{     // create class special skills
     float value;
     float duration;
     float cd;
+    float dcd;
     char description[100];
 }Skill;
 
@@ -67,6 +68,17 @@ else {
     }
 
     return name;
+}
+float calcul_des_dégats_pris(Character* p1,Character p2){ //p1=perso qui attaque, p2=perso  attaqué
+    int i=0;
+    i=(rand()%100)+1;
+    if(i<=p2.RES){
+        return p2.ActHP;
+    }
+    else{
+        p2.ActHP=p2.ActHP-p1->ATK*(1-(p1->DEF/100));
+        return p2.ActHP;
+    }
 }
 
 Character* maxi(Character* p1, Character* p2){
@@ -558,33 +570,372 @@ float dégats_pris(Character p1,Character p2){ //p1=perso attaqué, p2=perso qui
     int i=0;
     i=(rand()%100)+1;
     if(i<=p1.RES){
-        return p1.actHP;
+        return p1.ActHP;
     }
     else{
-        p1.actHP=p1.actHP-p2.ATK*(1-(p1.DEF/100));
-        return p1.actHP;
+        p1.ActHP=p1.ActHP-p2.ATK*(1-(p1.DEF/100));
+        return p1.ActHP;
+    }
+}
+void botfacile(Character tabC[],Jeu* j){
+    Jeu jeu;
+    *j=jeu;
+    int a=10;
+    int n=0;
+    int d=0;
+    Character tab1[3];
+    Character tab2[3];
+    jeu.t1 = MakeTeam(tabC,6);
+    jeu.t2 = MakeTeambot(tabC,6);
+    strcpy(jeu.t2.name , "bot");
+    tab1[0]=jeu.t1.p1;
+    tab1[1]=jeu.t1.p2;
+    tab1[2]=jeu.t1.p3;
+    tab2[0]=jeu.t2.p1;
+    tab2[1]=jeu.t2.p2;
+    tab2[2]=jeu.t2.p3;
+    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+        jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
+        jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
+        jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
+        jeu.t2.p1.ATK_bar=jeu.t2.p1.ATK_bar+jeu.t2.p1.SPD;
+        jeu.t2.p2.ATK_bar=jeu.t2.p2.ATK_bar+jeu.t2.p2.SPD;
+        jeu.t2.p3.ATK_bar=jeu.t2.p3.ATK_bar+jeu.t2.p3.SPD;
+        if(&jeu.t1.p1 == prochainperso(&jeu) || &jeu.t1.p2 == prochainperso(&jeu) || &jeu.t1.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
+            printf("quelle capacité voulez vous utiliser");
+            n=verifint();
+            if(n==1){
+                printf("quelle personnage voulez vous cibler");
+                d=verifint() -1;
+                while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
+                }
+               calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
+               
+            }
+        }
+        else if(&jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p2 == prochainperso(&jeu) || &jeu.t2.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
+            a=(rand()%3)+1;
+            while (tab2[a].ActHP<=0){
+                    a=(rand()%3)+1;
+                }
+            calcul_des_dégats_pris(prochainperso(&jeu),tab1[a]);
+    }
+    if(jeu.t1.p1.ActHP <= 0){
+        jeu.t1.p1.SPD=0;
+           }
+    if(jeu.t1.p2.ActHP <= 0){
+        jeu.t1.p2.SPD=0;
+   } 
+    if(jeu.t1.p3.ActHP <= 0){
+        jeu.t1.p3.SPD=0;
+   } 
+    if(jeu.t2.p1.ActHP <= 0){
+        jeu.t2.p1.SPD=0;
+   } 
+    if(jeu.t2.p2.ActHP <= 0){
+        jeu.t2.p2.SPD=0;
+   } 
+    if(jeu.t2.p3.ActHP <= 0){
+        jeu.t2.p3.SPD=0;
+   } 
+   }}
+    
+    
+    
+    
+void botmoyen(Character tabC[],Jeu* j){
+    Jeu jeu;
+    *j=jeu;
+    int n=0;
+    int d=0;
+    Character tab1[3];
+    Character tab2[3];
+    jeu.t1 = MakeTeam(tabC,6);
+    jeu.t2 = MakeTeambot(tabC,6);
+    strcpy(jeu.t2.name , "bot");
+    tab1[0]=jeu.t1.p1;
+    tab1[1]=jeu.t1.p2;
+    tab1[2]=jeu.t1.p3;
+    tab2[0]=jeu.t2.p1;
+    tab2[1]=jeu.t2.p2;
+    tab2[2]=jeu.t2.p3;
+    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+        jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
+        jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
+        jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
+        jeu.t2.p1.ATK_bar=jeu.t2.p1.ATK_bar+jeu.t2.p1.SPD;
+        jeu.t2.p2.ATK_bar=jeu.t2.p2.ATK_bar+jeu.t2.p2.SPD;
+        jeu.t2.p3.ATK_bar=jeu.t2.p3.ATK_bar+jeu.t2.p3.SPD;
+        if(&jeu.t1.p1 == prochainperso(&jeu) || &jeu.t1.p2 == prochainperso(&jeu) || &jeu.t1.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
+            printf("quelle capacité voulez vous utiliser");
+            n=verifint();
+            if(n==1){
+                printf("quelle personnage voulez vous cibler");
+                d=verifint() -1;
+                while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
+                }
+               calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
+            }
+        }
+        else if(&jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p2 == prochainperso(&jeu) || &jeu.t2.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
+                if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP<=tab1[2].ActHP){
+                    if(tab1[0].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                }
+            }
+            else if(tab1[1].ActHP<=tab1[0].ActHP && tab1[1].ActHP<=tab1[2].ActHP){
+            if(tab1[1].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[0].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                }
+            }
+            else if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP<=tab1[0].ActHP){
+            if(tab1[2].ActHP==0){
+                        if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                }
+            }
+    }
+    if(jeu.t1.p1.ActHP <= 0){
+        jeu.t1.p1.SPD=0;
+           }
+    if(jeu.t1.p2.ActHP <= 0){
+        jeu.t1.p2.SPD=0;
+   } 
+    if(jeu.t1.p3.ActHP <= 0){
+        jeu.t1.p3.SPD=0;
+   } 
+    if(jeu.t2.p1.ActHP <= 0){
+        jeu.t2.p1.SPD=0;
+   } 
+    if(jeu.t2.p2.ActHP <= 0){
+        jeu.t2.p2.SPD=0;
+   } 
+    if(jeu.t2.p3.ActHP <= 0){
+        jeu.t2.p3.SPD=0;
+   } 
+   }}
+       
+void botdifficile(Character tabC[],Jeu* j){
+    Jeu jeu;
+    *j= jeu;
+    int n=0;
+    int d=0;
+    Character tab1[3];
+    Character tab2[3];
+    jeu.t1 = MakeTeam(tabC,6);
+    jeu.t2 = MakeTeambot(tabC,6);
+    strcpy(jeu.t2.name , "bot");
+    tab1[0]=jeu.t1.p1;
+    tab1[1]=jeu.t1.p2;
+    tab1[2]=jeu.t1.p3;
+    tab2[0]=jeu.t2.p1;
+    tab2[1]=jeu.t2.p2;
+    tab2[2]=jeu.t2.p3;
+    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+        jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
+        jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
+        jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
+        jeu.t2.p1.ATK_bar=jeu.t2.p1.ATK_bar+jeu.t2.p1.SPD;
+        jeu.t2.p2.ATK_bar=jeu.t2.p2.ATK_bar+jeu.t2.p2.SPD;
+        jeu.t2.p3.ATK_bar=jeu.t2.p3.ATK_bar+jeu.t2.p3.SPD;
+        if(&jeu.t1.p1 == prochainperso(&jeu) || &jeu.t1.p2 == prochainperso(&jeu) || &jeu.t1.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
+            printf("quelle capacité voulez vous utiliser");
+            n=verifint();
+            if(n==1){
+                printf("quelle personnage voulez vous cibler");
+                d=verifint() -1;
+                while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
+                }
+               calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
+            }
+        }
+        else if(&jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p2 == prochainperso(&jeu) || &jeu.t2.p3 == prochainperso(&jeu)){
+            prochainperso(j)->ch_skill1.dcd -= 1;
+            prochainperso(j)->ch_skill2.dcd -= 1;
+            if (prochainperso(j)->ch_skill2.dcd<0){
+                prochainperso(j)->ch_skill2.dcd=0;
+            }
+            if (prochainperso(j)->ch_skill1.dcd<0){
+                prochainperso(j)->ch_skill1.dcd=0;
+            }
+            if(prochainperso(j)->ch_skill1.dcd != 0 && prochainperso(j)->ch_skill2.dcd != 0){
+            affichage1v1(jeu);
+                if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP<=tab1[2].ActHP){
+                    if(tab1[0].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                }
+            }
+            else if(tab1[1].ActHP<=tab1[0].ActHP && tab1[1].ActHP<=tab1[2].ActHP){
+            if(tab1[1].ActHP==0){
+                        if(tab1[2].ActHP<=tab1[0].ActHP && tab1[2].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                }
+            }
+            else if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP<=tab1[0].ActHP){
+            if(tab1[2].ActHP==0){
+                        if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP>=0){
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            }
+                         else{
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            }
+                        }
+                else{
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                }
+            }
+            }
+            else if(prochainperso(j)->ch_skill1.dcd == 0){
+                // fonction skill1 du perso
+                
+                prochainperso(j)->ch_skill1.dcd ==prochainperso(j)->ch_skill1.cd ;
+            }
+            else if(prochainperso(j)->ch_skill2.dcd == 0){
+                // fonction skill2 du perso
+                
+                prochainperso(j)->ch_skill2.dcd ==prochainperso(j)->ch_skill2.cd ; 
+            }
+            }
+        if(jeu.t1.p1.ActHP <= 0){
+        jeu.t1.p1.SPD=0;
+           }
+    if(jeu.t1.p2.ActHP <= 0){
+        jeu.t1.p2.SPD=0;
+   } 
+    if(jeu.t1.p3.ActHP <= 0){
+        jeu.t1.p3.SPD=0;
+   } 
+    if(jeu.t2.p1.ActHP <= 0){
+        jeu.t2.p1.SPD=0;
+   } 
+    if(jeu.t2.p2.ActHP <= 0){
+        jeu.t2.p2.SPD=0;
+   } 
+    if(jeu.t2.p3.ActHP <= 0){
+        jeu.t2.p3.SPD=0;
+   } 
     }
 }
 
-void ordifacile(){           //fonction pour jouer contre l'ordi mais c'est le debut et il faut mettre les bons perso dans le tableau 
-    MakeTeam(tabC);
-    MakeTeambot(tabC);
-    while(Team1.p1.ActHP > 0 && Team1.p2.ActHP > 0 && Team1.p3.ActHP > 0 || Team2.p1.ActHP > 0 && Team2.p2.ActHP > 0 && Team2.p3.ActHP > 0){
-        Team1.p1.ATK_bar=Team1.p1.ATK_bar+Team1.p1.SPD;
-        Team1.p2.ATK_bar=Team1.p2.ATK_bar+Team1.p2.SPD;
-        Team1.p3.ATK_bar=Team1.p3.ATK_bar+Team1.p3.SPD;
-        Team2.p1.ATK_bar=Team2.p1.ATK_bar+Team2.p1.SPD;
-        Team2.p2.ATK_bar=Team2.p2.ATK_bar+Team2.p2.SPD;
-        Team2.p3.ATK_bar=Team2.p3.ATK_bar+Team2.p3.SPD;
-                if (Team1.p1.ATK_bar >=500 ||   Team1.p2.ATK_bar >= 500 || Team1.p3.ATK_bar >= 500 || Team2.p1.ATK_bar >= 500 || Team2.p2.ATK_bar >= 500 || Team2.p3.ATK_bar >= 500){
-                
-                    
-                    affichage1v1(j);  // dans l'affichage on met aussi les verifint pour choix de l'atk
-                
+
+void vs1(Character tabC[],Jeu* j){
+Jeu jeu;
+*j=jeu;
+int n=0;
+int d=0;
+Character tab1[3];
+Character tab2[3];
+    jeu.t1=MakeTeam(tabC,6);
+    jeu.t2=MakeTeam(tabC,6);
+    tab1[0]=jeu.t1.p1;
+    tab1[1]=jeu.t1.p2;
+    tab1[2]=jeu.t1.p3;
+    tab2[0]=jeu.t2.p1;
+    tab2[1]=jeu.t2.p2;
+    tab2[2]=jeu.t2.p3;
+    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+        jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
+        jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
+        jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
+        jeu.t2.p1.ATK_bar=jeu.t2.p1.ATK_bar+jeu.t2.p1.SPD;
+        jeu.t2.p2.ATK_bar=jeu.t2.p2.ATK_bar+jeu.t2.p2.SPD;
+        jeu.t2.p3.ATK_bar=jeu.t2.p3.ATK_bar+jeu.t2.p3.SPD;
+        if(&jeu.t1.p1 == prochainperso(&jeu) || &jeu.t1.p2 == prochainperso(&jeu) || &jeu.t1.p3 == prochainperso(&jeu) || &jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
+            printf("quelle capacité voulez vous utiliser");
+            n=verifint();
+            if(n==1){
+                if(&jeu.t1.p1 == prochainperso(&jeu) || &jeu.t1.p2 == prochainperso(&jeu) || &jeu.t1.p3 == prochainperso(&jeu)){
+                printf("quelle personnage voulez vous cibler");
+                d=verifint()-1;
+                    while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
                 }
-            }      
-        }
-// je vous laisse l'ameliorer normalement le debut sera toujours pareil pour chaque ordi et pour le 1 contre 1 il faudra juste changer ChoixOrdiEquipe aussi j ai mis des fonction mais je sais pas quelle nom vous voulez mettre 
+                 calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
+                }
+                else {
+                    printf("quelle personnage voulez vous cibler");
+                    d=verifint();
+                    while (tab1[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
+                }
+                     calcul_des_dégats_pris(prochainperso(&jeu),tab1[d]);
+                }
+           }
+           if(jeu.t1.p1.ActHP <= 0){
+           jeu.t1.p1.SPD=0;
+           }
+            if(jeu.t1.p2.ActHP <= 0){
+           jeu.t1.p2.SPD=0;
+           } 
+            if(jeu.t1.p3.ActHP <= 0){
+           jeu.t1.p3.SPD=0;
+           } 
+            if(jeu.t2.p1.ActHP <= 0){
+           jeu.t2.p1.SPD=0;
+           } 
+            if(jeu.t2.p2.ActHP <= 0){
+           jeu.t2.p2.SPD=0;
+           } 
+            if(jeu.t2.p3.ActHP <= 0){
+           jeu.t2.p3.SPD=0;
+           } 
+       }   
+    }
+}       
+
+
 
 int mode(){
     //  n=1 facile n=2 difficile n=3 infernal n=4 1v1
@@ -612,18 +963,25 @@ int mode(){
  
 
 int main(){
+    Jeu* j;
+    j=malloc(100*sizeof(Jeu));
+    if(j==0){
+        exit(10);
+    }
 
     Skill S1;      // initialising special skill : Rugissement -40% DEF
     strcpy(S1.name, "Rugissement");
     S1.value = 0.6;
     S1.duration = 1;
     S1.cd = 2;
+    S1.dcd=0;
 
     Skill S2;      // initialising special skill : Hurlement de chasse +30% ATT de groupe
     strcpy(S2.name, "Hurlement de chasse");
     S2.value = 1.3;
     S2.duration = 1;
     S2.cd = 3;
+    S2.dcd=0;
 
     Character c1;         // initialising character : c1
     strcpy(c1.name, "Loup");
@@ -643,6 +1001,7 @@ int main(){
     sk1.value =2;
     sk1.duration =1;
     sk1.cd=5 ;
+    sk1.dcd=0;
     strcpy(sk1.description, "double ses propre degat");
     
     Skill sk2;
@@ -650,6 +1009,7 @@ int main(){
     sk2.value=2;
     sk2.duration=2;
     sk2.cd=4;
+    sk2.dcd=0;
     strcpy(sk2.description,"la defence est doublé");
 
 
@@ -673,6 +1033,7 @@ int main(){
     sk3.value=0.3;
     sk3.duration=100;
     sk3.cd=6;
+    sk3.dcd=0;
     strcpy(sk3.description, "donne 30 pourcent des hp max");
     
     Skill sk4;
@@ -680,6 +1041,7 @@ int main(){
     sk4.value=2;
     sk4.duration=1;
     sk4.cd=5;
+    sk4.dcd=0;
     strcpy(sk4.description, "double les degats d'un allier");
 
 
@@ -694,6 +1056,11 @@ int main(){
     perso2.ATK_bar=0;
     perso2.ch_skill1= sk3;
     perso2.ch_skill2= sk4;
+    
+    Character tabC[6];
+    tabC[0]=perso2;
+    tabC[1]=perso1;
+    tabC[2]=c1;
 
 
     printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");
@@ -706,18 +1073,18 @@ int main(){
         printf("bah chao bye bye");
         return 0  ; 
     }
-    switch(mode()){ // je sais pas si c'est bon ou pas comme on a pas les fonctions mais je le met quand meme 
+    switch(mode()){ 
         case 1:
-        ordifacile();
+        botfacile(tabC,j);
         break;
         case 2 :
-        ordimoyen();
+        botmoyen(tabC,j);
         break;
         case 3 :
-        ordidifficile();
+        botdifficile(tabC,j);
         break;
         case 4 :
-        1vs1();
+        vs1(tabC,j);
         break;
     }
     return 0;
