@@ -19,7 +19,7 @@ Character tab2[3];
         j.t2.p1.ATK_bar=j.t2.p1.ATK_bar+j.t2.p1.SPD;
         j.t2.p2.ATK_bar=j.t2.p2.ATK_bar+j.t2.p2.SPD;
         j.t2.p3.ATK_bar=j.t2.p3.ATK_bar+j.t2.p3.SPD;
-        if(jeu.t1.p1.ActHP > 500 || jeu.t1.p2.ActHP > 500 || jeu.t1.p3.ActHP > 500 || jeu.t2.p1.ActHP > 500 || jeu.t2.p2.ActHP > 500 || jeu.t2.p3.ActHP > 500){
+        if(jeu.t1.p1.ATK_bar > 500 || jeu.t1.p2.ATK_bar > 500 || jeu.t1.p3.ATK_bar > 500 || jeu.t2.p1.ATK_bar > 500 || jeu.t2.p2.ATK_bar > 500 || jeu.t2.p3.ATK_bar > 500){
             affichage1vs1();
             printf("quelle capacité voulez vous utiliser");
             n=verifint()
