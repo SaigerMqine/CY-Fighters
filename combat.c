@@ -47,22 +47,28 @@ void botfacile(){
     }
     if(jeu.t1.p1.ActHP <= 0){
         jeu.t1.p1.SPD=0;
+        jeu.t1.p1.ATK_bar=0;
            }
     if(jeu.t1.p2.ActHP <= 0){
         jeu.t1.p2.SPD=0;
+        jeu.t1.p2.ATK_bar=0;
    } 
     if(jeu.t1.p3.ActHP <= 0){
         jeu.t1.p3.SPD=0;
+        jeu.t1.p3.ATK_bar=0;
    } 
     if(jeu.t2.p1.ActHP <= 0){
         jeu.t2.p1.SPD=0;
+        jeu.t2.p1.ATK_bar=0;
    } 
     if(jeu.t2.p2.ActHP <= 0){
         jeu.t2.p2.SPD=0;
+        jeu.t2.p2.ATK_bar=0;
    } 
     if(jeu.t2.p3.ActHP <= 0){
         jeu.t2.p3.SPD=0;
-   } 
+        jeu.t2.p3.ATK_bar=0;
+   }
    }}
     
     
@@ -149,22 +155,28 @@ void botmoyen(){
     }
     if(jeu.t1.p1.ActHP <= 0){
         jeu.t1.p1.SPD=0;
+        jeu.t1.p1.ATK_bar=0;
            }
     if(jeu.t1.p2.ActHP <= 0){
         jeu.t1.p2.SPD=0;
+        jeu.t1.p2.ATK_bar=0;
    } 
     if(jeu.t1.p3.ActHP <= 0){
         jeu.t1.p3.SPD=0;
+        jeu.t1.p3.ATK_bar=0;
    } 
     if(jeu.t2.p1.ActHP <= 0){
         jeu.t2.p1.SPD=0;
+        jeu.t2.p1.ATK_bar=0;
    } 
     if(jeu.t2.p2.ActHP <= 0){
         jeu.t2.p2.SPD=0;
+        jeu.t2.p2.ATK_bar=0;
    } 
     if(jeu.t2.p3.ActHP <= 0){
         jeu.t2.p3.SPD=0;
-   } 
+        jeu.t2.p3.ATK_bar=0;
+   }
    }}
        
 void botdifficile(){
