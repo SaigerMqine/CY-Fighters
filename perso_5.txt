@@ -1,4 +1,4 @@
-Nom: hollowk
+Nom: Loup
 MaxHP: 330.0
 ActHP: 330.0
 ATK: 25.0
