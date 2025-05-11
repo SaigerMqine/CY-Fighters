@@ -1,4 +1,4 @@
-int compare_perso(Character c1, Character c2) {
+int compare_perso(Character c1, Character c2) {            //comparer 2 nom
     if (c1.name != c2.name) {
         return 0;
     }
