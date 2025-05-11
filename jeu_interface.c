@@ -207,6 +207,7 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          printf("|");
          afficheperso(j.t1.p1);
          affichagefin();
+      printf("\n");
          
          
      }
@@ -229,7 +230,7 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          printf("|");
          afficheperso(j.t1.p2);
          affichagefin();
-         
+         printf("\n");
          
      }
      else if(&j.t1.p3 == prochainperso(&j)){
@@ -251,6 +252,7 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          printf("|");
          afficheperso(j.t1.p3);
          affichagefin();
+      printf("\n");
          
          
      }
@@ -273,6 +275,7 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          printf("|");
          afficheperso(j.t2.p1);
          affichagefin();
+      printf("\n");
          
          
      }
@@ -295,6 +298,7 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          printf("|");
          afficheperso(j.t2.p2);
          affichagefin();
+         printf("\n");
          
      }
      else if(&j.t2.p3 == prochainperso(&j)){
