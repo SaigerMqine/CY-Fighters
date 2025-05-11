@@ -25,14 +25,14 @@ typedef struct{     // create class characters
     Skill ch_skill2;
 }Character;
 
-typedef struct{     // create class special skills
+typedef struct{     // create class team
     char name[50];
     Character p1;
     Character p2;
     Character p3;
 }Team;
 
-typedef struct {
+typedef struct {        //create class jeu
     Team t1;
     Team t2;
-} Jeu
+} Jeu;
