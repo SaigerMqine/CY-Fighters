@@ -7,16 +7,16 @@ RES: 10.0
 SPD: 72.0
 ATK_bar: 0.0
 
-Skill2: buff
-Skill2_Val: 2.0
-Skill2_Duration: 1.0
-Skill2_CD: 5.0
-Skill2_DCD: 5.0
-Skill2_Desc: Double les dégats d'un allié.
-
-Skill1: soin
-Skill1_Val: 0.3
-Skill1_Duration: 1000000
+Skill1: buff
+Skill1_Val: 2.0
+Skill1_Duration: 1.0
 Skill1_CD: 5.0
 Skill1_DCD: 5.0
-Skill1_Desc: soigne 30% des HP max.
+Skill1_Desc: Double les dégats d'un allié.
+
+Skill2: soin
+Skill2_Val: 0.3
+Skill2_Duration: 1000000
+Skill2_CD: 5.0
+Skill2_DCD: 5.0
+Skill2_Desc: soigne 30% des HP max.
