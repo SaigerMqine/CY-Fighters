@@ -34,7 +34,15 @@ void botfacile(){
                 }
                tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
             }
-            prochainperso(jeu)->ATK_bar=0;
+            if(&jeu.t1.p1 == prochainperso(&jeu)){
+                jeu.t1.p1.ATK_bar =0;
+            }
+            if(&jeu.t1.p2 == prochainperso(&jeu)){
+                jeu.t1.p2.ATK_bar =0;
+            }
+            if(&jeu.t1.p3 == prochainperso(&jeu)){
+                jeu.t1.p3.ATK_bar =0;
+            }
         }
         else if(jeu.t2.p1.ActHP >= 500 || jeu.t2.p2.ActHP >= 500 || jeu.t2.p3.ActHP >= 500){
             affichage1vs1(jeu);
@@ -43,7 +51,15 @@ void botfacile(){
                     a=(rand()%3)+1;
                 }
             tab1[a].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[a]);
-            prochainperso(jeu)->ATK_bar=0;
+            if(&jeu.t2.p1 == prochainperso(&jeu)){
+                jeu.t2.p1.ATK_bar =0;
+            }
+            if(&jeu.t2.p2 == prochainperso(&jeu)){
+                jeu.t2.p2.ATK_bar =0;
+            }
+            if(&jeu.t2.p3 == prochainperso(&jeu)){
+                jeu.t2.p3.ATK_bar =0;
+            }
     }
     if(jeu.t1.p1.ActHP <= 0){
         jeu.t1.p1.SPD=0;
@@ -139,48 +155,48 @@ void botmoyen(Character tabC[]){
                 if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP<=tab1[2].ActHP){
                     if(tab1[0].ActHP==0){
                         if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP>=0){
-                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
                                 jeu.t1.p3.ActHP=tab1[2].ActHP;
                             }
                          else{
-                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
                             jeu.t1.p2.ActHP=tab1[1].ActHP;
                             }
                         }
                 else{
-                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                        tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
                         jeu.t1.p1.ActHP=tab1[0].ActHP;
                 }
             }
             else if(tab1[1].ActHP<=tab1[0].ActHP && tab1[1].ActHP<=tab1[2].ActHP){
             if(tab1[1].ActHP==0){
                         if(tab1[2].ActHP<=tab1[0].ActHP && tab1[2].ActHP>=0){
-                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
                                 jeu.t1.p3.ActHP=tab1[2].ActHP;
                             }
                          else{
-                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
                             jeu.t1.p1.ActHP=tab1[0].ActHP;
                             }
                         }
                 else{
-                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                        tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(j),tab1[1]);
                         jeu.t1.p2.ActHP=tab1[1].ActHP;
                 }
             }
             else if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP<=tab1[0].ActHP){
             if(tab1[2].ActHP==0){
                         if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP>=0){
-                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                                tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(j),tab1[0]);
                                 jeu.t1.p1.ActHP=tab1[0].ActHP;
                             }
                          else{
-                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(j),tab1[1]);
                             jeu.t1.p2.ActHP=tab1[1].ActHP;
                             }
                         }
                 else{
-                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                        tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(j),tab1[2]);
                         jeu.t1.p3.ActHP=tab1[2].ActHP;
                 }
             }
@@ -248,7 +264,15 @@ void botdifficile(){
                 }
                tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
             }
-            prochainperso(jeu)->ATK_bar=0;
+            if(&jeu.t1.p1 == prochainperso(&jeu)){
+                jeu.t1.p1.ATK_bar =0;
+            }
+            if(&jeu.t1.p2 == prochainperso(&jeu)){
+                jeu.t1.p2.ATK_bar =0;
+            }
+            if(&jeu.t1.p3 == prochainperso(&jeu)){
+                jeu.t1.p3.ATK_bar =0;
+            }
         }
         else if(jeu.t2.p1.ActHP >= 500 || jeu.t2.p2.ActHP >= 500 || jeu.t2.p3.ActHP >= 500){
             prochainperso(jeu)->ch_skill1.dcd -= 1;
@@ -265,39 +289,48 @@ void botdifficile(){
                     if(tab[0].ActHP==0){
                         if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP>=0){
                                 tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                j.t1.p3.ActHP=tab1[2].ActHP;
                             }
                          else{
                             tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                             j.t1.p2.ActHP=tab1[1].ActHP;
                             }
                         }
                 else{
                         tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                        j.t1.p1.ActHP=tab1[0].ActHP;
                 }
             }
             else if(tab1[1].ActHP<=tab1[0].ActHP && tab1[1].ActHP<=tab1[2].ActHP){
             if(tab[1].ActHP==0){
                         if(tab1[2].ActHP<=tab1[0].ActHP && tab1[2].ActHP>=0){
                                 tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                j.t1.p3.ActHP=tab1[2].ActHP;
                             }
                          else{
                             tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                             j.t1.p1.ActHP=tab1[0].ActHP;
                             }
                         }
                 else{
                         tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                        j.t1.p2.ActHP=tab1[1].ActHP;
                 }
             }
             else if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP<=tab1[0].ActHP){
             if(tab[2].ActHP==0){
                         if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP>=0){
                                 tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                                j.t1.p1.ActHP=tab1[0].ActHP;
                             }
                          else{
                             tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                             j.t1.p2.ActHP=tab1[1].ActHP;
                             }
                         }
                 else{
                         tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                        j.t1.p3.ActHP=tab1[2].ActHP;
                 }
             }
             }
@@ -423,7 +456,15 @@ void botdifficile(){
                }
                }
             }
-            prochainperso(jeu)->ATK_bar=0;
+            if(&jeu.t1.p1 == prochainperso(&jeu)){
+                jeu.t1.p1.ATK_bar =0;
+            }
+            if(&jeu.t1.p2 == prochainperso(&jeu)){
+                jeu.t1.p2.ATK_bar =0;
+            }
+            if(&jeu.t1.p3 == prochainperso(&jeu)){
+                jeu.t1.p3.ATK_bar =0;
+            }
             }
         if(jeu.t1.p1.ActHP <= 0){
         jeu.t1.p1.SPD=0;
