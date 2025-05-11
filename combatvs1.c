@@ -76,8 +76,6 @@ Character tab2[3];
 
 
 void vs1(Character tabC[],Jeu* j){
-Jeu jeu;
-*j=jeu;
 int n=0;
 int d=0;
 Character tab1[3];
