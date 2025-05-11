@@ -1,4 +1,4 @@
-int verifint(){
+int verifint(){            //verifie les int
     int d=0;
     char c;
     char err;
@@ -11,7 +11,7 @@ int verifint(){
 }
 
 
-char* verifname(){
+char* verifname(){            //verifie les noms
     char* name = malloc(Max_name_length * sizeof(char)); 
     if (name == NULL) {
         printf("erreur malloc\n");
