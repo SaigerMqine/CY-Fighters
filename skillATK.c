@@ -1,7 +1,7 @@
-float skillATK (character* c){
-  c->ATK=c->ATK+((c->ATK*40)/100);
-  c->skill.dcd=c->skill.cd;
+float skillATK (character* c1,character c2){
+  c2.ATK=c2.ATK+((c2.ATK*c1->Skill.val)/100);
+  c1->skill.dcd=c1->skill.cd;
 }
-float antiskillATK (character* c){
-  c->ATK=c->ATK-((c->ATK*40)/100);
+float antiskillATK (character* c1,character c2){
+  c2.ATK=c2.ATK-((c2.ATK*c1->Skill.val)/100);
 }
