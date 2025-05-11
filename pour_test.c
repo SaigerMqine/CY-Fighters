@@ -353,11 +353,6 @@ Team MakeTeamJ2(Character characters[], int nb) {
     }
     printf("] |");
  }
- 
- void affiche_effet(){
-     // il faut le faire
- }
-
   
  void afficheperso(Character p1){
      printf("\n");
