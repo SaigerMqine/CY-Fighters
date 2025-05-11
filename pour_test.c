@@ -30,6 +30,8 @@ typedef struct{     // create class characters
     float RES;
     float SPD;
     int ATK_bar;
+    Effet effets[3];
+    int nb_effets
     Skill ch_skill1;
     Skill ch_skill2;
 }Character;
