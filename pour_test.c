@@ -1006,10 +1006,9 @@ int mode(){
 }
  
 
-int main(){
-    Jeu* j;
-    j=malloc(100*sizeof(Jeu));
-    if(j==0){
+int main() {
+    Jeu* j = malloc(sizeof(Jeu));
+    if (j == NULL) {
         exit(10);
     }
 
