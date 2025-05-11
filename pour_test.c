@@ -577,9 +577,10 @@ float dégats_pris(Character p1,Character p2){ //p1=perso attaqué, p2=perso qui
         return p1.ActHP;
     }
 }
-void botfacile(Character tabC[],Jeu* j){
+void botfacile(Character tabC[]){
     Jeu jeu;
-    *j=jeu;
+    Jeu* j;
+    j=&jeu;
     int a=10;
     int n=0;
     int d=0;
@@ -601,28 +602,68 @@ void botfacile(Character tabC[],Jeu* j){
         jeu.t2.p1.ATK_bar=jeu.t2.p1.ATK_bar+jeu.t2.p1.SPD;
         jeu.t2.p2.ATK_bar=jeu.t2.p2.ATK_bar+jeu.t2.p2.SPD;
         jeu.t2.p3.ATK_bar=jeu.t2.p3.ATK_bar+jeu.t2.p3.SPD;
+        while(jeu.t1.p1.ATK_bar > 500 || jeu.t1.p2.ATK_bar > 500 || jeu.t1.p3.ATK_bar > 500|| jeu.t2.p1.ATK_bar > 500||jeu.t2.p2.ATK_bar > 500 || jeu.t2.p3.ATK_bar > 500){
         if(&jeu.t1.p1 == prochainperso(&jeu) || &jeu.t1.p2 == prochainperso(&jeu) || &jeu.t1.p3 == prochainperso(&jeu)){
             affichage1v1(jeu);
-            printf("quelle capacité voulez vous utiliser");
+            printf("\n quelle capacité voulez vous utiliser");
             n=verifint();
             if(n==1){
-                printf("quelle personnage voulez vous cibler");
+                printf("\n quelle personnage voulez vous cibler");
                 d=verifint() -1;
                 while (tab2[d].ActHP<=0){
                     printf("ce personnageest deja mort reessayer");
                     d=verifint() -1;
                 }
-               calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
-               
+               tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
+               if (tab2[d].SPD==jeu.t2.p1.SPD){
+                   jeu.t2.p1.ActHP=tab2[d].ActHP;
+               }
+               if (tab2[d].SPD==jeu.t2.p2.SPD){
+                    jeu.t2.p2.ActHP=tab2[d].ActHP;
+
+               }
+               if (tab2[d].SPD==jeu.t2.p1.SPD){
+                    jeu.t2.p3.ActHP=tab2[d].ActHP;
+
+               }
             }
-        }
-        else if(&jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p2 == prochainperso(&jeu) || &jeu.t2.p3 == prochainperso(&jeu)){
+            }
+            if(&jeu.t1.p1 == prochainperso(&jeu)){
+                jeu.t1.p1.ATK_bar =0;
+            }
+            if(&jeu.t1.p2 == prochainperso(&jeu)){
+                jeu.t1.p2.ATK_bar =0;
+            }
+            if(&jeu.t1.p3 == prochainperso(&jeu)){
+                jeu.t1.p3.ATK_bar =0;
+            }
+        if(&jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p2 == prochainperso(&jeu) || &jeu.t2.p3 == prochainperso(&jeu)){
             affichage1v1(jeu);
             a=(rand()%3)+1;
             while (tab2[a].ActHP<=0){
-                    a=(rand()%3)+1;
+                    a=(rand()%3);
                 }
-            calcul_des_dégats_pris(prochainperso(&jeu),tab1[a]);
+            tab1[a].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[a]);
+            if (tab2[d].SPD==jeu.t2.p1.SPD){
+                   jeu.t1.p1.ActHP=tab1[a].ActHP;
+               }
+               if (tab2[d].SPD==jeu.t2.p2.SPD){
+                    jeu.t1.p2.ActHP=tab1[a].ActHP;
+
+               }
+               if (tab2[d].SPD==jeu.t2.p3.SPD){
+                    jeu.t1.p3.ActHP=tab1[a].ActHP;
+
+               }
+               if(&jeu.t2.p1 == prochainperso(&jeu)){
+                jeu.t2.p1.ATK_bar =0;
+            }
+            if(&jeu.t2.p2 == prochainperso(&jeu)){
+                jeu.t2.p2.ATK_bar =0;
+            }
+            if(&jeu.t2.p3 == prochainperso(&jeu)){
+                jeu.t2.p3.ATK_bar =0;
+            }
     }
     if(jeu.t1.p1.ActHP <= 0){
         jeu.t1.p1.SPD=0;
@@ -641,13 +682,16 @@ void botfacile(Character tabC[],Jeu* j){
    } 
     if(jeu.t2.p3.ActHP <= 0){
         jeu.t2.p3.SPD=0;
-   } 
-   }}
+   }
+    }
+    }
+   }
     
     
     
     
-void botmoyen(Character tabC[],Jeu* j){
+    
+void botmoyen(Character tabC[]){
     Jeu jeu;
     *j=jeu;
     int n=0;
@@ -746,7 +790,7 @@ void botmoyen(Character tabC[],Jeu* j){
    } 
    }}
        
-void botdifficile(Character tabC[],Jeu* j){
+void botdifficile(Character tabC[]){
     Jeu jeu;
     *j= jeu;
     int n=0;
@@ -867,7 +911,7 @@ void botdifficile(Character tabC[],Jeu* j){
 }
 
 
-void vs1(Character tabC[],Jeu* j){
+void vs1(Character tabC[]){
 Jeu jeu;
 *j=jeu;
 int n=0;
@@ -1075,16 +1119,16 @@ int main(){
     }
     switch(mode()){ 
         case 1:
-        botfacile(tabC,j);
+        botfacile(tabC);
         break;
         case 2 :
-        botmoyen(tabC,j);
+        botmoyen(tabC);
         break;
         case 3 :
-        botdifficile(tabC,j);
+        botdifficile(tabC);
         break;
         case 4 :
-        vs1(tabC,j);
+        vs1(tabC);
         break;
     }
     return 0;
