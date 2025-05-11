@@ -31,7 +31,7 @@ Character tab2[3];
                     printf("ce personnageest deja mort reessayer")
                     d=verifint() -1;
                 }
-                tab2[d]actHP=calcul_des_dégats_pris(prochainperso(&j),tab2[d]);
+                tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&j),tab2[d]);
                 }
                 else {
                     printf("quelle personnage voulez vous cibler");
@@ -40,7 +40,7 @@ Character tab2[3];
                     printf("ce personnageest deja mort reessayer")
                     d=verifint() -1;
                 }
-                    tab1[d]actHP=calcul_des_dégats_pris(prochainperso(&j),tab1[d]);
+                    tab1[d].ActHP=calcul_des_dégats_pris(prochainperso(&j),tab1[d]);
                 }
            }
            if(jeu.t1.p1.ActHP <= 0){
