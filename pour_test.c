@@ -69,6 +69,11 @@ else {
 
     return name;
 }
+
+int equipe_en_vie(Team* t) {
+    return (t->p1.ActHP > 0 || t->p2.ActHP > 0 || t->p3.ActHP > 0);
+}
+
 float calcul_des_dégats_pris(Character* p1,Character p2){ //p1=perso qui attaque, p2=perso  attaqué
     int i=0;
     i=(rand()%100)+1;
@@ -600,7 +605,7 @@ void botfacile(Character tabC[]){
     tab2[0]=jeu.t2.p1;
     tab2[1]=jeu.t2.p2;
     tab2[2]=jeu.t2.p3;
-    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+    while(equipe_en_vie(&jeu.t1) && equipe_en_vie(&jeu.t2)){
         jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
         jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
         jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
@@ -712,7 +717,7 @@ void botmoyen(Character tabC[]){
     tab2[0]=jeu.t2.p1;
     tab2[1]=jeu.t2.p2;
     tab2[2]=jeu.t2.p3;
-    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+    while(equipe_en_vie(&jeu.t1) && equipe_en_vie(&jeu.t2)){      
         jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
         jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
         jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
@@ -811,7 +816,7 @@ void botdifficile(Character tabC[]){
     tab2[0]=jeu.t2.p1;
     tab2[1]=jeu.t2.p2;
     tab2[2]=jeu.t2.p3;
-    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+    while(equipe_en_vie(&jeu.t1) && equipe_en_vie(&jeu.t2)){
         jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
         jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
         jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
@@ -931,7 +936,7 @@ Character tab2[3];
     tab2[0]=jeu.t2.p1;
     tab2[1]=jeu.t2.p2;
     tab2[2]=jeu.t2.p3;
-    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
+    while(equipe_en_vie(&jeu.t1) && equipe_en_vie(&jeu.t2)){
         jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
         jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
         jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
