@@ -74,14 +74,18 @@ void botfacile(){
     
     
     
-void botmoyen(){
+void botmoyen(Character tabC[]){
     Jeu jeu;
+    Jeu* j;
+    j=&jeu;
+    int a=10;
     int n=0;
     int d=0;
     Character tab1[3];
     Character tab2[3];
-    jeu.t1 = MakeTeam(tabC);
-    jeu.t2 = MakeTeambot(tabC);
+    jeu.t1 = MakeTeam(tabC,6);
+    jeu.t2 = MakeTeambot(tabC,6);
+    strcpy(jeu.t2.name , "bot");
     tab1[0]=jeu.t1.p1;
     tab1[1]=jeu.t1.p2;
     tab1[2]=jeu.t1.p3;
@@ -89,96 +93,127 @@ void botmoyen(){
     tab2[1]=jeu.t2.p2;
     tab2[2]=jeu.t2.p3;
     while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
-        Team1.p1.ATK_bar=Team1.p1.ATK_bar+Team1.p1.SPD;
-        Team1.p2.ATK_bar=Team1.p2.ATK_bar+Team1.p2.SPD;
-        Team1.p3.ATK_bar=Team1.p3.ATK_bar+Team1.p3.SPD;
-        Team2.p1.ATK_bar=Team2.p1.ATK_bar+Team2.p1.SPD;
-        Team2.p2.ATK_bar=Team2.p2.ATK_bar+Team2.p2.SPD;
-        Team2.p3.ATK_bar=Team2.p3.ATK_bar+Team2.p3.SPD;
-        if(jeu.t1.p1.ActHP >= 500 || jeu.t1.p2.ActHP >= 500 || jeu.t1.p3.ActHP >= 500){
-            affichage1vs1(jeu);
-            printf("quelle capacité voulez vous utiliser");
+        jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
+        jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
+        jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
+        jeu.t2.p1.ATK_bar=jeu.t2.p1.ATK_bar+jeu.t2.p1.SPD;
+        jeu.t2.p2.ATK_bar=jeu.t2.p2.ATK_bar+jeu.t2.p2.SPD;
+        jeu.t2.p3.ATK_bar=jeu.t2.p3.ATK_bar+jeu.t2.p3.SPD;
+        while(jeu.t1.p1.ATK_bar > 500 || jeu.t1.p2.ATK_bar > 500 || jeu.t1.p3.ATK_bar > 500|| jeu.t2.p1.ATK_bar > 500||jeu.t2.p2.ATK_bar > 500 || jeu.t2.p3.ATK_bar > 500){
+        if(&jeu.t1.p1 == prochainperso(&jeu) || &jeu.t1.p2 == prochainperso(&jeu) || &jeu.t1.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
+            printf("\n quelle capacité voulez vous utiliser");
             n=verifint();
             if(n==1){
-                printf("quelle personnage voulez vous cibler");
+                printf("\n quelle personnage voulez vous cibler");
                 d=verifint() -1;
                 while (tab2[d].ActHP<=0){
                     printf("ce personnageest deja mort reessayer");
                     d=verifint() -1;
                 }
                tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
+               if (tab2[d].MaxHP==jeu.t2.p1.MaxHP){
+                   jeu.t2.p1.ActHP=tab2[d].ActHP;
+               }
+               if (tab2[d].MaxHP==jeu.t2.p2.MaxHP){
+                    jeu.t2.p2.ActHP=tab2[d].ActHP;
+
+               }
+               if (tab2[d].MaxHP==jeu.t2.p1.MaxHP){
+                    jeu.t2.p3.ActHP=tab2[d].ActHP;
+
+               }
             }
-            prochainperso(jeu)->ATK_bar=0;
-        }
-        else if(jeu.t2.p1.ActHP >= 500 || jeu.t2.p2.ActHP >= 500 || jeu.t2.p3.ActHP >= 500){
-            affichage1vs1(jeu);
+            }
+            if(&jeu.t1.p1 == prochainperso(&jeu)){
+                jeu.t1.p1.ATK_bar =0;
+            }
+            if(&jeu.t1.p2 == prochainperso(&jeu)){
+                jeu.t1.p2.ATK_bar =0;
+            }
+            if(&jeu.t1.p3 == prochainperso(&jeu)){
+                jeu.t1.p3.ATK_bar =0;
+            }
+        else if(&jeu.t2.p1 == prochainperso(&jeu) || &jeu.t2.p2 == prochainperso(&jeu) || &jeu.t2.p3 == prochainperso(&jeu)){
+            affichage1v1(jeu);
                 if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP<=tab1[2].ActHP){
-                    if(tab[0].ActHP==0){
+                    if(tab1[0].ActHP==0){
                         if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP>=0){
-                                tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                jeu.t1.p3.ActHP=tab1[2].ActHP;
                             }
                          else{
-                            tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            jeu.t1.p2.ActHP=tab1[1].ActHP;
                             }
                         }
                 else{
-                        tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                        jeu.t1.p1.ActHP=tab1[0].ActHP;
                 }
             }
             else if(tab1[1].ActHP<=tab1[0].ActHP && tab1[1].ActHP<=tab1[2].ActHP){
-            if(tab[1].ActHP==0){
+            if(tab1[1].ActHP==0){
                         if(tab1[2].ActHP<=tab1[0].ActHP && tab1[2].ActHP>=0){
-                                tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                                jeu.t1.p3.ActHP=tab1[2].ActHP;
                             }
                          else{
-                            tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                            jeu.t1.p1.ActHP=tab1[0].ActHP;
                             }
                         }
                 else{
-                        tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                        jeu.t1.p2.ActHP=tab1[1].ActHP;
                 }
             }
             else if(tab1[2].ActHP<=tab1[1].ActHP && tab1[2].ActHP<=tab1[0].ActHP){
-            if(tab[2].ActHP==0){
+            if(tab1[2].ActHP==0){
                         if(tab1[0].ActHP<=tab1[1].ActHP && tab1[0].ActHP>=0){
-                                tab1[0].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                                calcul_des_dégats_pris(prochainperso(&jeu),tab1[0]);
+                                jeu.t1.p1.ActHP=tab1[0].ActHP;
                             }
                          else{
-                            tab1[1].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            calcul_des_dégats_pris(prochainperso(&jeu),tab1[1]);
+                            jeu.t1.p2.ActHP=tab1[1].ActHP;
                             }
                         }
                 else{
-                        tab1[2].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                        calcul_des_dégats_pris(prochainperso(&jeu),tab1[2]);
+                        jeu.t1.p3.ActHP=tab1[2].ActHP;
                 }
             }
-            prochainperso(jeu)->ATK_bar=0;
+              if(&jeu.t2.p1 == prochainperso(&jeu)){
+                jeu.t2.p1.ATK_bar =0;
+            }
+            if(&jeu.t2.p2 == prochainperso(&jeu)){
+                jeu.t2.p2.ATK_bar =0;
+            }
+            if(&jeu.t2.p3 == prochainperso(&jeu)){
+                jeu.t2.p3.ATK_bar =0;
+            }
     }
     if(jeu.t1.p1.ActHP <= 0){
         jeu.t1.p1.SPD=0;
-        jeu.t1.p1.ATK_bar=0;
            }
     if(jeu.t1.p2.ActHP <= 0){
         jeu.t1.p2.SPD=0;
-        jeu.t1.p2.ATK_bar=0;
    } 
     if(jeu.t1.p3.ActHP <= 0){
         jeu.t1.p3.SPD=0;
-        jeu.t1.p3.ATK_bar=0;
    } 
     if(jeu.t2.p1.ActHP <= 0){
         jeu.t2.p1.SPD=0;
-        jeu.t2.p1.ATK_bar=0;
    } 
     if(jeu.t2.p2.ActHP <= 0){
         jeu.t2.p2.SPD=0;
-        jeu.t2.p2.ATK_bar=0;
    } 
     if(jeu.t2.p3.ActHP <= 0){
         jeu.t2.p3.SPD=0;
-        jeu.t2.p3.ATK_bar=0;
-   }
+   } 
    }}
-       
+         
 void botdifficile(){
     Jeu jeu;
     int n=0;
