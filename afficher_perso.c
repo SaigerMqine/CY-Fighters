@@ -1,5 +1,5 @@
 
-void afficher_perso(Character c, int index) {
+void afficher_perso(Character c, int index) {            // afficher le perso quand on le choisit
     printf(" ┌────────────────────────────────┐\n");
     printf(" │ Personnage %d : %s ", index + 1, c.name);
     for(int i=strlen(c.name);i<21;i++){
