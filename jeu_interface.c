@@ -316,6 +316,7 @@ void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvo
          printf("|");
          afficheperso(j.t2.p3);
          affichagefin();
+      printf("\n");
          
      }
     
