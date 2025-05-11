@@ -70,6 +70,18 @@ else {
     return name;
 }
 
+void affiche_effets(Character c) {
+    if (c.nb_effets == 0) {
+        printf("Aucun effet actif sur %s.\n", c.name);
+        return;
+    }
+
+    printf("Effets actifs sur %s :\n", c.name);
+    for (int i = 0; i < c.nb_effets; i++) {
+        printf(" - %s (%s : %.2f) [%d tour(s) restant(s)]\n", c.effets[i].nom, c.effets[i].type, c.effets[i].valeur, c.effets[i].duree_restante);
+    }
+}
+
 int equipe_en_vie(Team* t) {
     return (t->p1.ActHP > 0 || t->p2.ActHP > 0 || t->p3.ActHP > 0);
 }
