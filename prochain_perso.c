@@ -1,5 +1,5 @@
 
-Character* maxi(Character* p1, Character* p2){
+Character* maxi(Character* p1, Character* p2){        //est utiliser dans prochain perso
     if (p1->ATK_bar >= p2->ATK_bar) {
     return  p1; }
     else {
@@ -7,7 +7,7 @@ Character* maxi(Character* p1, Character* p2){
     }
 }
 
-Character* prochainperso(Jeu* j){
+Character* prochainperso(Jeu* j){            //renvoie le prochain perso qui attaque
     Character* m1 = maxi(&j->t1.p1, &j->t1.p2);
     Character* m2 = maxi(&j->t1.p3, &j->t2.p1);
     Character* m3 = maxi(&j->t2.p2, &j->t2.p3);
