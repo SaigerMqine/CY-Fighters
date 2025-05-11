@@ -31,7 +31,7 @@ typedef struct{     // create class characters
     float SPD;
     int ATK_bar;
     Effet effets[3];
-    int nb_effets
+    int nb_effets;
     Skill ch_skill1;
     Skill ch_skill2;
 }Character;
@@ -603,9 +603,8 @@ float dégats_pris(Character p1,Character p2){ //p1=perso attaqué, p2=perso qui
         return p1.ActHP;
     }
 }
-void botfacile(Character tabC[]){
+void botfacile(Character tabC[], Jeu* j){
     Jeu jeu;
-    Jeu* j;
     j=&jeu;
     int a=10;
     int n=0;
@@ -717,9 +716,8 @@ void botfacile(Character tabC[]){
     
     
     
-void botmoyen(Character tabC[]){
+void botmoyen(Character tabC[], Jeu* j){
     Jeu jeu;
-    *j=jeu;
     int n=0;
     int d=0;
     Character tab1[3];
@@ -816,9 +814,8 @@ void botmoyen(Character tabC[]){
    } 
    }}
        
-void botdifficile(Character tabC[]){
+void botdifficile(Character tabC[], Jeu* j){
     Jeu jeu;
-    *j= jeu;
     int n=0;
     int d=0;
     Character tab1[3];
@@ -937,7 +934,7 @@ void botdifficile(Character tabC[]){
 }
 
 
-void vs1(Character tabC[]){
+void vs1(Character tabC[], Jeu* j){
 Jeu jeu;
 *j=jeu;
 int n=0;
@@ -1144,18 +1141,17 @@ int main() {
     }
     switch(mode()){ 
         case 1:
-        botfacile(tabC);
+        botfacile(tabC, j);
         break;
         case 2 :
-        botmoyen(tabC);
+        botmoyen(tabC, j);
         break;
         case 3 :
-        botdifficile(tabC);
+        botdifficile(tabC, j);
         break;
         case 4 :
-        vs1(tabC);
+        vs1(tabC, j);
         break;
     }
     return 0;
 }
-
