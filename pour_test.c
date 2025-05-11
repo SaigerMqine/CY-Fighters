@@ -5,6 +5,13 @@
 
 #define Max_name_length 25
 
+typedef struct {
+    char nom[50];
+    char type[20];
+    float valeur;
+    int duree_restante;
+} Effet;
+
 typedef struct{     // create class special skills
     char name[50];
     float value;
