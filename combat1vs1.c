@@ -1,5 +1,5 @@
 #include <stdio.h>
-void 1vs1(){
+void vs1(){
 int n=0;
 int d=0;
 Character tab1[3];
