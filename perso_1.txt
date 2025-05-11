@@ -1,5 +1,5 @@
 Nom: Yoda
-MaxHP: 300.0
+MaxHP: 290.0
 ActHP: 300.0
 ATK: 50.0
 DEF: 10.0
