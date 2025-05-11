@@ -27,7 +27,9 @@ int mode(){
  
 
 int main(){
-
+jeu* j;
+jeu jeux;
+j=&jeux;
     Skill S1;      // initialising special skill : Rugissement -40% DEF
     strcpy(S1.name, "Rugissement");
     S1.value = 0.6;
