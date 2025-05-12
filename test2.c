@@ -126,7 +126,7 @@ void afficher_perso(Character c, int index) {            // afficher le perso qu
 }
 
 
-Team MakeTeam(Character characters[], int nb) {
+Team MakeTeam(Character characters[], int nb) {            //le joueur crrer l'equipe
     Team team1;
     printf("Entrez le nom de votre équipe : ");
     strcpy(team1.name , verifname());
@@ -165,7 +165,7 @@ Team MakeTeam(Character characters[], int nb) {
     return team1;
 }
 
-Team MakeTeambot(Character characters[], int nb) {
+Team MakeTeambot(Character characters[], int nb) {            //le bot creer son equipe
     Team team2;
     strcpy(team2.name, "Bot");
     int choisis[3] = {-1, -1, -1};
@@ -197,7 +197,7 @@ Team MakeTeambot(Character characters[], int nb) {
 
 
  
- void affichenom(Team t1){
+ void affichenom(Team t1){            //afficher le nom et quand les perso sont mort
      printf("|  ");
      printf("%s",t1.p1.name);
      if(t1.p1.ActHP<=0){
@@ -232,7 +232,7 @@ Team MakeTeambot(Character characters[], int nb) {
      printf("|");
  }
  
- void hpsp(Character p1,Character p2, Character p3 ){
+ void hpsp(Character p1,Character p2, Character p3 ){            //afficher les bar de point de vie et de vitesse
      printf("| [ ");
     for(int i=0; i<(p1.ActHP) ;i=i+25){
     printf("#");
@@ -292,54 +292,54 @@ Team MakeTeambot(Character characters[], int nb) {
  void affiche_effet(){
      // il faut le faire
  }
-float skillSPD (Character* c1,Character c2){      //buff SPD
+float skillSPD (Character* c1,Character c2){      //augmente SPD
   c2.SPD=c2.SPD*c1->ch_skill1.value;
   c1->ch_skill1.dcd=c1->ch_skill1.cd;
   return c2.SPD;
 }
-float antiskillSPD (Character* c1,Character c2){    // antibuff SPD
+float antiskillSPD (Character* c1,Character c2){    // diminue SPD
   c2.SPD=c2.SPD/c1->ch_skill1.value;
   return c2.SPD;
 }
-float skillATK (Character* c1,Character c2){
+float skillATK (Character* c1,Character c2){        //augmente attaque
   c2.ATK=c2.ATK*c1->ch_skill1.value;
   c1->ch_skill1.dcd=c1->ch_skill1.cd;
   return c2.ATK;
 }
-float antiskillATK (Character* c1,Character c2){
+float antiskillATK (Character* c1,Character c2){        //diminue attaque
   c2.ATK=c2.ATK/c1->ch_skill1.value;
   return c2.ATK;
 }
-float skillDEF (Character* c1,Character c2){
+float skillDEF (Character* c1,Character c2){        //augment la def sur soi
   c2.DEF=c2.DEF*c1->ch_skill2.value;
   c1->ch_skill2.dcd=c1->ch_skill2.cd;
   return c2.DEF;
 }
-float antiskillDEF (Character* c1,Character c2){
+float antiskillDEF (Character* c1,Character c2){        //diminue la def
   c2.DEF=c2.DEF/c1->ch_skill2.value;
   return c2.DEF;
 }
-float skillDEFene (Character* c1,Character c2){
+float skillDEFene (Character* c1,Character c2){        //diminue la def sur l'ennemie
   c2.DEF=c2.DEF/c1->ch_skill2.value;
   c1->ch_skill2.dcd=c1->ch_skill2.cd;
   return c2.DEF;
 }
-float antiskillDEFene (Character* c1,Character c2){
+float antiskillDEFene (Character* c1,Character c2){        //augmente la def
   c2.DEF=c2.DEF*c1->ch_skill2.value;
   return c2.DEF;
 }
-float skillHEAL (Character* c1,Character c2){
+float skillHEAL (Character* c1,Character c2){        //heal les allier
   c2.ActHP=c2.ActHP+(c2.MaxHP*c1->ch_skill2.value);
   c1->ch_skill2.dcd=c1->ch_skill2.cd;
   return c2.ActHP;
 }
   
-  float skillRES (Character* c1,Character c2){
+  float skillRES (Character* c1,Character c2){        //augmente l'esquive
   c2.RES=c2.RES*c1->ch_skill2.value;
   c1->ch_skill2.dcd=c1->ch_skill2.cd;
   return c2.RES;
 }
-float antiskillRES (Character* c1,Character c2){
+float antiskillRES (Character* c1,Character c2){        /diminue l'equive
   c2.RES=c2.RES/c1->ch_skill2.value;
   return c2.RES;
 }
@@ -353,7 +353,7 @@ float antiskillSPDene (Character* c1,Character c2){      //antiDEBUFF SDP
   c2.SPD=c2.SPD*c1->ch_skill2.value;
   return c2.SPD;
 }
- void afficheperso(Character p1){
+ void afficheperso(Character p1){            //afficher les attaque du perso et ce qu'il peut utiliser
      printf("\n");
      printf("|   %s",p1.name);
      for(int i=strlen(p1.name);i<94;i++){
@@ -413,7 +413,7 @@ float antiskillSPDene (Character* c1,Character c2){      //antiDEBUFF SDP
      
  }
 
- void affichageteam(Team t1){
+ void affichageteam(Team t1){            //afficher toute la team
      printf("┌──[");
     for(int i=0; i<strlen(t1.name)-1;i++){
     printf("%c",t1.name[i]);
@@ -443,7 +443,7 @@ float antiskillSPDene (Character* c1,Character c2){      //antiDEBUFF SDP
  }
  
 
-void affichage1v1(Jeu j){ // fonction prochainperso a code il faut qu'elle renvoie le perso qui attaque   
+void affichage1v1(Jeu j){         //affiche le combat   
      if(&j.t1.p1 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
@@ -1125,7 +1125,7 @@ void botdifficile(Character tabC[]){
 
 
 
-int mode(){
+int mode(){            //debut du code choisir les different mode
     //  n=1 facile n=2 difficile n=3 infernal n=4 1v1
     int d=0;
     int n = 0;
@@ -1173,8 +1173,8 @@ int main(){
     c1.RES = 10;
     c1.SPD = 107;
     c1.ATK_bar = 0;
-    strcpy(c1.ch_skill1 , "Rugissement");
-    strcpy(c1.ch_skill2 , "Hurlement_de_chasse");
+    c1.ch_skill1 =S1;
+    c1.ch_skill2 =S2;
 
     
     Skill sk1;
@@ -1202,8 +1202,8 @@ int main(){
     perso1.RES=10;
     perso1.SPD=80;
     perso1.ATK_bar=0;
-    strcpy(perso1.ch_skill1,"coup_de_sabre_lazer");
-    strcpy(perso1.ch_skill2,"force");
+    perso1.ch_skill1=sk1;
+    perso1.ch_skill2=sk2;
 
 
 
@@ -1231,15 +1231,15 @@ int main(){
     perso2.RES=10;
     perso2.SPD=72;
     perso2.ATK_bar=0;
-    perso2.ch_skill1= soin;
-    perso2.ch_skill2= buff;
+    perso2.ch_skill1= sk3;
+    perso2.ch_skill2= sk4;
     Character tabC[6];
     tabC[0]=perso2;
     tabC[1]=perso1;
     tabC[2]=c1;
 
 
-    printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");
+    printf("tape 2 si tu veux pas jouer\ntape 1 pour jouer\n");        //savoir si tu veux joué
     int n = verifint();
     while(n != 1 && n != 2){
         printf("Erreur, Tape 1 ou 2\n");
@@ -1249,7 +1249,7 @@ int main(){
         printf("bah chao bye bye");
         return 0  ; 
     }
-    switch(mode()){ // je sais pas si c'est bon ou pas comme on a pas les fonctions mais je le met quand meme 
+    switch(mode()){ // le truc pour les modes 
         case 1:
 
         break;
