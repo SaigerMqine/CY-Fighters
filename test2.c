@@ -116,12 +116,12 @@ void afficher_perso(Character c, int index) {            // afficher le perso qu
     for(int i=strlen(c.ch_skill1.name);i<27;i++){
          printf(" ");
      }
-     printf("|\n");
+    printf("|\n");
     printf(" │ Skill 2 : %s", c.ch_skill2.name);
     for(int i=strlen(c.ch_skill2.name);i<27;i++){
          printf(" ");
      }
-     printf("|\n");
+    printf("|\n");
     printf(" └────────────────────────────────┘\n");
 }
 
@@ -208,7 +208,7 @@ Team MakeTeambot(Character characters[], int nb) {            //le bot creer son
      }
      for(int i=strlen(t1.p1.name) ;i<32 ;i++){
         printf(" ");
-    }
+     }
      printf("%s",t1.p2.name);
      if(t1.p2.ActHP<=0){
          printf(" |x|");
@@ -218,7 +218,7 @@ Team MakeTeambot(Character characters[], int nb) {            //le bot creer son
      }
      for(int i=strlen(t1.p2.name) ;i<32 ;i++){
         printf(" ");
-    }
+     }
      printf("%s",t1.p3.name);
      if(t1.p3.ActHP<=0){
          printf(" |x|");
@@ -226,14 +226,14 @@ Team MakeTeambot(Character characters[], int nb) {            //le bot creer son
      else{
      printf(" |3|");
      }
-    for(int i=strlen(t1.p3.name) ;i<20 ;i++){
+     for(int i=strlen(t1.p3.name) ;i<20 ;i++){
         printf(" ");
-    }
+     }
      printf("|");
  }
  
  void hpsp(Character p1,Character p2, Character p3 ){            //afficher les bar de point de vie et de vitesse
-     printf("| [ ");
+    printf("| [ ");
     for(int i=0; i<(p1.ActHP) ;i=i+25){
     printf("#");
     }
@@ -339,7 +339,7 @@ float skillHEAL (Character* c1,Character c2){        //heal les allier
   c1->ch_skill2.dcd=c1->ch_skill2.cd;
   return c2.RES;
 }
-float antiskillRES (Character* c1,Character c2){        /diminue l'equive
+float antiskillRES (Character* c1,Character c2){        //diminue l'equive
   c2.RES=c2.RES/c1->ch_skill2.value;
   return c2.RES;
 }
@@ -366,35 +366,34 @@ float antiskillSPDene (Character* c1,Character c2){      //antiDEBUFF SDP
      }
      printf("|\n");
      printf("|      |1| attaque normal(peut etre utiliser a chaque tour)                                        |");
-      printf("\n");
+     printf("\n");
      if (p1.ch_skill1.cd == 0){
          printf("|      |2|");
          printf(" %s (duree:%f tours)",p1.ch_skill1.name ,p1.ch_skill1.duration);
          for(int i=strlen(p1.ch_skill1.name);i<58;i++){
-         printf(" ");
-        }
-        printf("|\n");
+             printf(" ");
+         }
+         printf("|\n");
      }
      else{
          printf("|      |-|");
          printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill1.name,p1.ch_skill1.dcd ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill1.name);i<46;i++){
-         printf(" ");
-        }
-        printf("|\n");
+             printf(" ");
+         }
+         printf("|\n");
      }
      printf("|            %s",p1.ch_skill1.description);
      for(int i=strlen(p1.ch_skill1.description);i<86;i++){
          printf(" ");
-    }
+     }
      printf("|\n");
-     
-          if (p1.ch_skill2.cd == 0){
+     if (p1.ch_skill2.cd == 0){
          printf("|      |3|");
          printf(" %s (duree:%f tours)",p1.ch_skill2.name ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill2.name);i<58;i++){
-         printf(" ");
-        }
+             printf(" ");
+         }
         printf("|\n");
      }
      else{
@@ -402,21 +401,21 @@ float antiskillSPDene (Character* c1,Character c2){      //antiDEBUFF SDP
          printf(" %s (recharge: %f duree:%f tours)",p1.ch_skill2.name,p1.ch_skill2.dcd ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill2.name);i<46;i++){
              printf(" ");
-        }
+         }
         printf("|\n");
      }
-      printf("|            %s",p1.ch_skill1.description);
+     printf("|            %s",p1.ch_skill1.description);
      for(int i=strlen(p1.ch_skill2.description);i<86;i++){
          printf(" ");
-    }
+     }
      printf("|");
      
  }
 
  void affichageteam(Team t1){            //afficher toute la team
-     printf("┌──[");
+    printf("┌──[");
     for(int i=0; i<strlen(t1.name)-1;i++){
-    printf("%c",t1.name[i]);
+        printf("%c",t1.name[i]);
     }
     printf("]");
  
@@ -463,16 +462,14 @@ void affichage1v1(Jeu j){         //affiche le combat
          printf("|");
          afficheperso(j.t1.p1);
          affichagefin();
-      printf("\n");
-         
-         
+      printf("\n");    
      }
      else if(&j.t1.p2 == prochainperso(&j)){
          affichageteam(j.t2);
          affichagefin();
          printf("\n \n");
          affichageteam(j.t1);
-        affichagefin();
+         affichagefin();
          printf("\n \n");
          printf("┌");
          for(int i=0;i<98;i++){
@@ -508,7 +505,7 @@ void affichage1v1(Jeu j){         //affiche le combat
          printf("|");
          afficheperso(j.t1.p3);
          affichagefin();
-      printf("\n");
+         printf("\n");
          
          
      }
@@ -531,7 +528,7 @@ void affichage1v1(Jeu j){         //affiche le combat
          printf("|");
          afficheperso(j.t2.p1);
          affichagefin();
-      printf("\n");
+         printf("\n");
          
          
      }
@@ -576,7 +573,7 @@ void affichage1v1(Jeu j){         //affiche le combat
          printf("|");
          afficheperso(j.t2.p3);
          affichagefin();
-      printf("\n");
+         printf("\n");
          
      }
     
@@ -1134,14 +1131,14 @@ int mode(){            //debut du code choisir les different mode
     while (d!= 1 && d!= 2){
         printf("Erreur, Tape 1 ou 2\n");
      d = verifint();
-    }
+     }
     if (d == 1){
         printf(" tape 1 mode facile \n tape 2 mode difficile \n tape 3 mode infernal\n");
         n= verifint();
         while (n!=1 && n!=2 && n!=3){
             printf("t a pas taper 1 2 ou 3 mon reuf peut tu reessayer");
             n= verifint();
-        }
+         }
     }
     if(d==2){
         n=4;
