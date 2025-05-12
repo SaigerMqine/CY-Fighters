@@ -584,7 +584,7 @@ void affichage1v1(Jeu j){         //affiche le combat
 
         
 void botdifficile(Character tabC[]){
-    Jeu jeu;
+    Jeu jeu;            //init de tous se qu'il faut
     Jeu*j;
     j=&jeu;
     int n=0;
@@ -628,21 +628,21 @@ void botdifficile(Character tabC[]){
     tab2eff2[0]=jeu.t2.p1;
     tab2eff2[1]=jeu.t2.p2;
     tab2eff2[2]=jeu.t2.p3;
-    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){
-        jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
+    while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){        //condition d'arret
+        jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;        //augment la atk bar
         jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
         jeu.t1.p3.ATK_bar=jeu.t1.p3.ATK_bar+jeu.t1.p3.SPD;
         jeu.t2.p1.ATK_bar=jeu.t2.p1.ATK_bar+jeu.t2.p1.SPD;
         jeu.t2.p2.ATK_bar=jeu.t2.p2.ATK_bar+jeu.t2.p2.SPD;
         jeu.t2.p3.ATK_bar=jeu.t2.p3.ATK_bar+jeu.t2.p3.SPD;
-        if(jeu.t1.p1.ActHP >= 500 || jeu.t1.p2.ActHP >= 500 || jeu.t1.p3.ActHP >= 500){
+        if(jeu.t1.p1.ActHP >= 500 || jeu.t1.p2.ActHP >= 500 || jeu.t1.p3.ActHP >= 500){        //pour savoir si c'est toi qui attaque
             affichage1v1(jeu);
             printf("quelle capacité voulez vous utiliser");
             n=verifint();
-            if(n==1){
+            if(n==1){        //attaque que tu utilise
                 printf("quelle personnage voulez vous cibler");
                 d=verifint() -1;
-                while (tab2[d].ActHP<=0){
+                while (tab2[d].ActHP<=0){        //di on attaque un mort
                     printf("ce personnageest deja mort reessayer");
                     d=verifint() -1;
                 }
