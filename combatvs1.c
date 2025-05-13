@@ -510,7 +510,188 @@ Jeu jeu;
             if(&jeu.t1.p3 == prochainperso(&jeu)){
                 jeu.t1.p3.ATK_bar =0;
             }
-                else {            //2eme joueur avec le meme fonctionnement
+                else {
+                    if(prochainperso(j)->MaxHP==290){
+            ds1-=1;
+            ds7-=1;
+            }
+            if(prochainperso(j)->MaxHP==210){
+            ds2-=1;
+            ds8-=1;
+            }
+            if(prochainperso(j)->MaxHP==190){
+            ds3-=1;
+            ds9-=1;
+            }
+            if(prochainperso(j)->MaxHP==230){
+            ds4-=1;
+            }
+            if(prochainperso(j)->MaxHP==330){
+            ds5-=1;
+            ds10-=1;
+            }
+            if(prochainperso(j)->MaxHP==300){
+            ds6-=1;
+            }
+            if (ds1<0){
+                if(tab2eff2[0].ATK!=tab4[0].ATK){
+                       tab2eff2[0].ATK=antiskillATK(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.ATK=tab2eff2[0].ATK;
+                }
+                if(tab2eff2[1].ATK!=tab4[1].ATK){
+                       tab2eff2[1].ATK=antiskillATK(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.ATK=tab2eff2[1].ATK;
+                }
+                if(tab2eff2[2].ATK!=tab4[2].ATK){
+                       tab2eff2[2].ATK=antiskillATK(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.ATK=tab2eff2[2].ATK;
+                }
+                ds1=10000;
+            }
+            if (ds2<0){
+               if(tab2eff2[0].SPD!=tab4[0].SPD){
+                       tab2eff2[0].SPD=antiskillSPD(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.SPD=tab2eff2[0].SPD;
+                }
+                if(tab2eff2[1].SPD!=tab4[1].SPD){
+                       tab2eff2[1].SPD=antiskillSPD(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.ATK=tab2eff2[1].SPD;
+                }
+                if(tab2eff2[2].SPD!=tab4[2].SPD){
+                       tab2eff2[2].SPD=antiskillSPD(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.SPD=tab2eff2[2].SPD;
+                }
+                ds2=10000;
+            }
+            if (ds3<0){
+               if(tab2eff2[0].ATK!=tab4[0].ATK){
+                       tab2eff2[0].ATK=antiskillATK(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.ATK=tab2eff2[0].ATK;
+                }
+                if(tab2eff2[1].ATK!=tab4[1].ATK){
+                       tab2eff2[1].ATK=antiskillATK(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.ATK=tab2eff2[1].ATK;
+                }
+                if(tab2eff2[2].ATK!=tab4[2].ATK){
+                       tab2eff2[2].ATK=antiskillATK(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.ATK=tab2eff2[2].ATK;
+                }
+                ds3=10000;
+            }
+            if (ds4<0){
+                if(tab2eff2[0].ATK!=tab4[0].ATK){
+                       tab2eff2[0].ATK=antiskillATK(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.ATK=tab2eff2[0].ATK;
+                }
+                if(tab2eff2[1].ATK!=tab4[1].ATK){
+                       tab2eff2[1].ATK=antiskillATK(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.ATK=tab2eff2[1].ATK;
+                }
+                if(tab2eff2[2].ATK!=tab4[2].ATK){
+                       tab2eff2[2].ATK=antiskillATK(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.ATK=tab2eff2[2].ATK;
+                }
+                ds4=10000;
+            }
+            if (ds5<0){
+                 if(tab2eff2[0].ATK!=tab4[0].ATK){
+                       tab2eff2[0].ATK=antiskillATK(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.ATK=tab2eff2[0].ATK;
+                }
+                if(tab2eff2[1].ATK!=tab4[1].ATK){
+                       tab2eff2[1].ATK=antiskillATK(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.ATK=tab2eff2[1].ATK;
+                }
+                if(tab2eff2[2].ATK!=tab4[2].ATK){
+                       tab2eff2[2].ATK=antiskillATK(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.ATK=tab2eff2[2].ATK;
+                }
+                ds5=10000;
+            }
+            if (ds6<0){
+                if(tab2eff2[0].SPD!=tab4[0].SPD){
+                       tab2eff2[0].SPD=antiskillSPD(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.SPD=tab2eff2[0].SPD;
+                }
+                if(tab2eff2[1].SPD!=tab4[1].SPD){
+                       tab2eff2[1].SPD=antiskillSPD(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.ATK=tab2eff2[1].SPD;
+                }
+                if(tab2eff2[2].SPD!=tab4[2].SPD){
+                       tab2eff2[2].SPD=antiskillSPD(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.SPD=tab2eff2[2].SPD;
+                }
+                ds6=10000;
+            }
+          if (ds7<0){
+                if(tab2eff2[0].DEF!=tab4[0].DEF){
+                       tab2eff2[0].DEF=antiskillDEF(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.DEF=tab2eff2[0].DEF;
+                }
+                if(tab2eff2[1].DEF!=tab4[1].DEF){
+                       tab2eff2[1].DEF=antiskillDEF(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.DEF=tab2eff2[1].DEF;
+                }
+                if(tab2eff2[2].DEF!=tab4[2].DEF){
+                       tab2eff2[2].DEF=antiskillDEF(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.DEF=tab2eff2[2].DEF;
+                }
+                ds7=10000;
+            }
+          if (ds8<0){
+                if(tab2eff2[0].RES!=tab4[0].RES){
+                       tab2eff2[0].RES=antiskillRES(prochainperso(j),tab2eff2[0]);
+                    j->t2.p1.RES=tab2eff2[0].RES;
+                }
+                if(tab2eff2[1].RES!=tab4[1].RES){
+                       tab2eff2[1].RES=antiskillRES(prochainperso(j),tab2eff2[1]);
+                    j->t2.p2.RES=tab2eff2[1].RES;
+                }
+                if(tab2eff2[2].RES!=tab4[2].RES){
+                       tab2eff2[2].RES=antiskillRES(prochainperso(j),tab2eff2[2]);
+                    j->t2.p3.RES=tab2eff2[2].RES;
+                }
+                ds8=10000;
+            }
+          if (ds9<0){
+                if(tab1eff2[0].SPD!=tab3[0].SPD){
+                       tab1eff2[0].SPD=antiskillSPDene(prochainperso(j),tab2eff2[0]);
+                    j->t1.p1.SPD=tab1eff2[0].SPD;
+                }
+                if(tab1eff2[1].SPD!=tab3[1].SPD){
+                       tab1eff2[1].SPD=antiskillSPDene(prochainperso(j),tab2eff2[1]);
+                    j->t1.p2.ATK=tab1eff2[1].SPD;
+                }
+                if(tab1eff2[2].SPD!=tab3[2].SPD){
+                       tab1eff2[2].SPD=antiskillSPDene(prochainperso(j),tab2eff2[2]);
+                    j->t1.p3.SPD=tab1eff2[2].SPD;
+                }
+                ds9=10000;
+            }
+            if (ds10<0){
+                if(tab1eff2[0].DEF!=tab3[0].DEF){
+                       tab1eff2[0].DEF=antiskillDEFene(prochainperso(j),tab1eff2[0]);
+                    j->t1.p1.DEF=tab1eff3[0].DEF;
+                }
+                if(tab1eff2[1].DEF!=tab3[1].DEF){
+                       tab1eff2[1].DEF=antiskillDEFene(prochainperso(j),tab1eff2[1]);
+                    j->t1.p2.DEF=tab1eff2[1].DEF;
+                }
+                if(tab1eff2[2].DEF!=tab3[2].DEF){
+                       tab1eff2[2].DEF=antiskillDEFene(prochainperso(j),tab1eff2[2]);
+                    j->t1.p3.ATK=tab1eff2[2].DEF;
+                }
+                ds10=10000;
+            }
+            
+            prochainperso(j)->ch_skill1.dcd -= 1;
+            prochainperso(j)->ch_skill2.dcd -= 1;
+            if (prochainperso(j)->ch_skill2.dcd<0){
+                prochainperso(j)->ch_skill2.dcd=0;
+            }
+            if (prochainperso(j)->ch_skill1.dcd<0){
+                prochainperso(j)->ch_skill1.dcd=0;
+            }//2eme joueur avec le meme fonctionnement
                 affichage1v1(jeu);
             printf("\n quelle capacité voulez vous utiliser");
             n=verifint();
