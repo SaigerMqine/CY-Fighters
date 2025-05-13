@@ -4,7 +4,7 @@ ActHP: 190.0
 ATK: 40.0
 DEF: 10.0
 RES: 15.0
-SPD: 100.0
+SPD: 95.0
 ATK_bar: 0.0
 
 Skill1: chargeur
