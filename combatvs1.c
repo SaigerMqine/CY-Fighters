@@ -1,17 +1,46 @@
 #include <stdio.h>
 void vs1(Character tabC[],Jeu* j){            //combat joueur contre joueur
-int n=0;            //quelle attaque choisir
-int d=0;            //quel perso cibler
-Character tab1[3];
-Character tab2[3];
-    jeu.t1=MakeTeam(tabC,6);
-    jeu.t2=MakeTeam(tabC,6);
+Jeu jeu;
+    int n=0;
+    int d=0;
+    int ds1=10000;
+    int ds2=10000;
+    int ds3=10000;
+    int ds4=0;
+    int ds5=0;
+    int ds6=0;
+    int ds7=0;
+    int ds8=0;
+    int ds9=0;
+    int ds10=0;
+    int ds11=0;
+    int ds12=0;
+    Character tab1[3];
+    Character tab2[3];
+    Character tab3[3];
+    Character tab4[3];
+    Character tab1eff2[3];
+    Character tab2eff2[3];
+    jeu.t1 = MakeTeam(tabC)
+    jeu.t2 = MakeTeambot(tabC);
     tab1[0]=jeu.t1.p1;
     tab1[1]=jeu.t1.p2;
     tab1[2]=jeu.t1.p3;
     tab2[0]=jeu.t2.p1;
     tab2[1]=jeu.t2.p2;
     tab2[2]=jeu.t2.p3;
+    tab3[0]=jeu.t1.p1;
+    tab3[1]=jeu.t1.p2;
+    tab3[2]=jeu.t1.p3;
+    tab4[0]=jeu.t2.p1;
+    tab4[1]=jeu.t2.p2;
+    tab4[2]=jeu.t2.p3;
+    tab1eff2[0]=jeu.t1.p2;
+    tab1eff2[1]=jeu.t1.p2;
+    tab1eff2[2]=jeu.t1.p3;
+    tab2eff2[0]=jeu.t2.p1;
+    tab2eff2[1]=jeu.t2.p2;
+    tab2eff2[2]=jeu.t2.p3;
     while(jeu.t1.p1.ActHP > 0 && jeu.t1.p2.ActHP > 0 && jeu.t1.p3.ActHP > 0 || jeu.t2.p1.ActHP > 0 && jeu.t2.p2.ActHP > 0 && jeu.t2.p3.ActHP > 0){            //condition d'arret du jeu 
         jeu.t1.p1.ATK_bar=jeu.t1.p1.ATK_bar+jeu.t1.p1.SPD;
         jeu.t1.p2.ATK_bar=jeu.t1.p2.ATK_bar+jeu.t1.p2.SPD;
