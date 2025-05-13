@@ -289,9 +289,18 @@ Team MakeTeambot(Character characters[], int nb) {            //le bot creer son
     printf("] |");
  }
  
- void affiche_effet(){
-     // il faut le faire
- }
+ void affiche_effets(Character c) {
+    if (c.nb_effets == 0) {
+        printf("Aucun effet actif sur %s.\n", c.name);
+        return;
+    }
+
+    printf("Effets actifs sur %s :\n", c.name);
+    for (int i = 0; i < c.nb_effets; i++) {
+        printf(" - %s (%s : %.2f) [%d tour(s) restant(s)]\n", c.effets[i].nom, c.effets[i].type, c.effets[i].valeur, c.effets[i].duree_restante);
+    }
+}
+
 float skillSPD (Character* c1,Character c2){      //augmente SPD
   c2.SPD=c2.SPD*c1->ch_skill1.value;
   c1->ch_skill1.dcd=c1->ch_skill1.cd;
