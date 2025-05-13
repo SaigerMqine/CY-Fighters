@@ -718,23 +718,246 @@ Jeu jeu;
 
                }
             }
-                    else if(n==2){
-                    
+                else if(prochainperso(j)->ch_skill1.dcd == 0){
+                // fonction skill1 du perso
+              if(prochainperso(j)->MaxHP==230||prochainperso(j)->MaxHP==330){
+                    d=verifint() -1;
+                while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
                 }
-                else if(n==3){
-                    
+                tab2[a].ATK=skillATK(prochainperso(j),tab2[a]);
+                if(prochainperso(j)->MaxHP==230){
+                    ds4==prochainperso(j)->ch_skill1.duration;
+                    if(tab2eff2[0].MaxHP==tab2[d].MaxHP){
+                        tab2eff2[0].ATK==tab2[d].ATK;
                     }
-            }
-            if(&jeu.t2.p1 == prochainperso(&jeu)){
-                jeu.t2.p1.ATK_bar =0;
-            }
-            if(&jeu.t2.p2 == prochainperso(&jeu)){
-                jeu.t2.p2.ATK_bar =0;
-            }
-            if(&jeu.t2.p3 == prochainperso(&jeu)){
-                jeu.t2.p3.ATK_bar =0;
-            }
+                    if(tab2eff2[1].MaxHP==tab2[d].MaxHP){
+                        tab2eff2[1].ATK==tab2[d].ATK;
+                    }
+                    if(tab2eff2[2].MaxHP==tab2[d].MaxHP){
+                        tab2eff2[2].ATK==tab2[d].ATK;
+                    }                    
+                }
+                 if(prochainperso(j)->MaxHP==330){
+                    ds5==prochainperso(j)->ch_skill1.duration;
+                    if(tab2eff2[0].MaxHP==tab2[d].MaxHP){
+                        tab2eff2[0].ATK==tab2[d].ATK;
+                    }
+                    if(tab2eff2[1].MaxHP==tab2[d].MaxHP){
+                        tab2eff2[1].ATK==tab2[d].ATK;
+                    }
+                    if(tab2eff2[2].MaxHP==tab2[d].MaxHP){
+                        tab2eff2[2].ATK==tab2[d].ATK;
+                    }
+               if (tab2[a].MaxHP==jeu.t2.p1.MaxHP){
+                   jeu.t2.p1.ATK=tab2[d].ATK;
+               }
+               if (tab2[a].MaxHP==jeu.t2.p2.MaxHP){
+                    jeu.t2.p2.ATK=tab2[d].ATK;
+
+               }
+               if (tab2[a].MaxHP==jeu.t2.p3.MaxHP){
+                    jeu.t2.p3.ATK=tab2[d].ATK;
+               }
+              }
             
+                   if(prochainperso(j)->MaxHP==290){
+                    ds1==prochainperso(j)->ch_skill1.duration;
+                    if(tab2eff2[0].MaxHP==prochainperso(j)->MaxHP){
+                        prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p1);
+                          tab2eff2[0].ATK==prochainperso(j)->ATK;
+                      jeu.t2.p1.ATK=prochainperso(j)->ATK;
+                  
+                        if(tab2eff2[1].MaxHP==prochainperso(j)->MaxHP){
+                        prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p2);
+                          tab2eff2[1].ATK==prochainperso(j)->ATK;
+                      jeu.t2.p2.ATK=prochainperso(j)->ATK;
+                   }
+                   if (prochainperso(j)->MaxHP==(tab2eff2[2].MaxHP){
+                       prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p3);  
+                     tab2eff2[2].ATK==prochainperso(j)->ATK;
+                     jeu.t2.p3.ATK=prochainperso(j)->ATK;
+                   }
+                    }
+                   }
+                    if(prochainperso(j)->MaxHP==190){
+                    ds3==prochainperso(j)->ch_skill1.duration;
+                    if(tab2eff2[0].MaxHP==prochainperso(j)->MaxHP){
+                        prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p1);
+                          tab2eff2[0].ATK==prochainperso(j)->ATK;
+                      jeu.t2.p1.ATK=prochainperso(j)->ATK;
+                  
+                        if(tab2eff2[1].MaxHP==prochainperso(j)->MaxHP){
+                        prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p2);
+                          tab2eff2[1].ATK==prochainperso(j)->ATK;
+                      jeu.t2.p2.ATK=prochainperso(j)->ATK;
+                   }
+                   if (prochainperso(j)->MaxHP==(tab2eff2[2].MaxHP){
+                       prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p3);  
+                     tab2eff2[1].ATK==prochainperso(j)->ATK;
+                     jeu.t2.p3.ATK=prochainperso(j)->ATK;
+                   }
+                    }
+                   }
+                if(prochainperso(j)->MaxHP==210){
+                    ds2==prochainperso(j)->ch_skill1.duration;
+                    if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
+                        prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p1);
+                         tab2eff2[0].SPD==prochainperso(j)->SPD;
+                        jeu.t2.p1.SPD=prochainperso(j)->SPD;
+                   }
+                   if (prochainperso(j)->MaxHP==jeu.t2.p2.MaxHP){
+                       prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p2);
+                      tab2eff2[1].SPD==prochainperso(j)->SPD;
+                        jeu.t2.p2.SPD=prochainperso(j)->SPD;
+                   }
+                   if (prochainperso(j)->MaxHP==jeu.t2.p3.MaxHP){
+                       prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p3);
+                       tab2eff2[2].SPD==prochainperso(j)->SPD;
+                        jeu.t2.p3.SPD=prochainperso(j)->SPD;
+                   }
+                }
+                if(prochainperso(j)->MaxHP==300){
+                    ds6==prochainperso(j)->ch_skill1.duration;
+                   if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
+                        prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p1);
+                         tab2eff2[0].SPD==prochainperso(j)->SPD;
+                        jeu.t2.p1.SPD=prochainperso(j)->SPD;
+                   }
+                   if (prochainperso(j)->MaxHP==jeu.t2.p2.MaxHP){
+                       prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p2);
+                      tab2eff2[1].SPD==prochainperso(j)->SPD;
+                        jeu.t2.p2.SPD=prochainperso(j)->SPD;
+                   }
+                   if (prochainperso(j)->MaxHP==jeu.t2.p3.MaxHP){
+                       prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p3);
+                       tab2eff2[2].SPD==prochainperso(j)->SPD;
+                        jeu.t2.p3.SPD=prochainperso(j)->SPD;
+                   }
+                }
+            }
+            }
+            else if(prochainperso(j)->ch_skill2.dcd == 0){
+             if(prochainperso(j)->MaxHP==230||prochainperso(j)->MaxHP==300){
+                 d=verifint() -1;
+                while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
+                }
+                    tab2[d].ActHP=skillHEAL(prochainperso(j),tab2[d]);
+                 if (tab2[d].MaxHP==jeu.t2.p1.MaxHP){
+                   jeu.t2.p1.ActHP=tab2[d].ActHP;
+               }
+               if (tab2[d].MaxHP==jeu.t2.p2.MaxHP){
+                    jeu.t2.p2.ActHP=tab2[d].ActHP;
+               }
+               if (tab2[d].MaxHP==jeu.t2.p3.MaxHP){
+                    jeu.t2.p3.ActHP=tab2[d].ActHP;
+               }
+            if(prochainperso(j)->MaxHP==330){
+                   d=verifint() -1;
+                while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
+                }
+                    tab1[d].DEF=skillDEFene(prochainperso(j),tab1[d]);
+                 if (tab1[d].MaxHP==jeu.t1.p1.MaxHP){
+                   jeu.t1.p1.DEF=tab1[d].DEF;
+               }
+               if (tab1[a].MaxHP==jeu.t1.p2.MaxHP){
+                    jeu.t1.p2.DEF=tab1[d].DEF;
+
+               }
+               if (tab1[a].MaxHP==jeu.t1.p3.MaxHP){
+                    jeu.t1.p3.DEF=tab1[d].DEF;
+               }
+              ds10==prochainperso(j)->ch_skill2.duration;
+                if(tab1eff2[0].MaxHP==tab1[d].MaxHP){
+                    tab1eff2[0].DEF==tab1[d].DEF;
+                }
+                if(tab1eff2[1].MaxHP==tab1[d].MaxHP){
+                    tab1eff2[1].DEF==tab1[d].DEF;
+                }
+                if(tab1eff2[2].MaxHP==tab1[d].MaxHP){
+                    tab1eff2[2].DEF==tab2[d].DEF;
+                }
+                }
+            if(prochainperso(j)->MaxHP==290){
+            ds7==prochainperso(j)->ch_skill2.duration;
+                 if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
+                      prochainperso(j)->DEF=skillDEF(prochainperso(j),jeu.t2.p1);
+                    tab2eff2[0].DEF==prochainperso(j)->DEF;
+                   jeu.t2.p1.DEF=prochainperso(j)->DEF;
+               }
+               if (prochainperso(j)->MaxHP==jeu.t2.p2.MaxHP){
+                    prochainperso(j)->DEF=skillDEF(prochainperso(j),jeu.t2.p2);
+                 tab2eff2[1].DEF==prochainperso(j)->DEF;
+                    jeu.t2.p2.DEF=prochainperso(j)->DEF;
+
+               }
+               if (prochainperso(j)->MaxHP==jeu.t2.p3.MaxHP){
+                    prochainperso(j)->DEF=skillDEF(prochainperso(j),jeu.t2.p3);
+                 tab2eff2[2].DEF==prochainperso(j)->DEF;
+                    jeu.t2.p3.DEF=prochainperso(j)->DEF;
+               }
+               }
+            if(prochainperso(j)->MaxHP==190){
+                   d=verifint() -1;
+                while (tab2[d].ActHP<=0){
+                    printf("ce personnageest deja mort reessayer");
+                    d=verifint() -1;
+                }
+                    tab1[d].SPD=skillSPDene(prochainperso(j),tab1[d]);
+              ds9==prochainperso(j)->ch_skill2.duration;
+                 if (tab1[d].MaxHP==jeu.t1.p1.MaxHP){
+                   jeu.t1.p1.SPD=tab1[d].SPD;
+               }
+               if (tab1[d].MaxHP==jeu.t1.p2.MaxHP){
+                    jeu.t1.p2.SPD=tab1[d].SPD;
+               }
+               if (tab1[d].MaxHP==jeu.t1.p3.MaxHP){
+                    jeu.t1.p3.SPD=tab1[d].SPD;
+               }
+                if(tab1eff2[0].MaxHP==tab1[d].MaxHP){
+                    tab1eff2[0].DEF==tab1[d].DEF;
+                }
+                if(tab1eff2[1].MaxHP==tab1[d].MaxHP){
+                    tab1eff2[1].DEF==tab1[d].DEF;
+                }
+                if(tab1eff2[2].MaxHP==tab1[d].MaxHP){
+                    tab1eff2[2].DEF==tab1[d].DEF;
+                }
+                }
+            if(prochainperso(j)->MaxHP==210){
+              ds8==prochainperso(j)->ch_skill2.duration;
+                 if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
+                      prochainperso(j)->RES=skillRES(prochainperso(j),jeu.t2.p1);
+                   tab2eff2[0].RES==prochainperso(j)->RES;
+                   jeu.t2.p1.RES=prochainperso(j)->RES;
+               }
+               if (prochainperso(j)->MaxHP==jeu.t2.p2.MaxHP){
+                    prochainperso(j)->RES=skillRES(prochainperso(j),jeu.t2.p2);
+                 tab2eff2[1].RES==prochainperso(j)->RES;
+                    jeu.t2.p2.RES=prochainperso(j)->RES;
+
+               }
+               if (prochainperso(j)->MaxHP==jeu.t2.p3.MaxHP){
+                    prochainperso(j)->RES=skillRES(prochainperso(j),jeu.t2.p3);
+                 tab2eff2[2].RES==prochainperso(j)->RES;
+                    jeu.t2.p3.RES=prochainperso(j)->RES;
+               }
+            }
+            if(&jeu.t1.p1 == prochainperso(&jeu)){
+                jeu.t1.p1.ATK_bar =0;
+            }
+            if(&jeu.t1.p2 == prochainperso(&jeu)){
+                jeu.t1.p2.ATK_bar =0;
+            }
+            if(&jeu.t1.p3 == prochainperso(&jeu)){
+                jeu.t1.p3.ATK_bar =0;
+            }
+            }
            
            if(jeu.t1.p1.ActHP <= 0){            //quand le perso est mort
         jeu.t1.p1.SPD=0;
