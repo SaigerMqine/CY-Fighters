@@ -376,7 +376,7 @@ float antiskillSPDene (Character* c1,Character c2){      //antiDEBUFF SDP
      printf("|\n");
      printf("|      |1| attaque normal(peut etre utiliser a chaque tour)                                        |");
      printf("\n");
-     if (p1.ch_skill1.cd == 0){
+     if (p1.ch_skill1.dcd == 0){
          printf("|      |2|");
          printf(" %s (duree:%f tours)",p1.ch_skill1.name ,p1.ch_skill1.duration);
          for(int i=strlen(p1.ch_skill1.name);i<58;i++){
@@ -397,7 +397,7 @@ float antiskillSPDene (Character* c1,Character c2){      //antiDEBUFF SDP
          printf(" ");
      }
      printf("|\n");
-     if (p1.ch_skill2.cd == 0){
+     if (p1.ch_skill2.dcd == 0){
          printf("|      |3|");
          printf(" %s (duree:%f tours)",p1.ch_skill2.name ,p1.ch_skill2.duration);
          for(int i=strlen(p1.ch_skill2.name);i<58;i++){
