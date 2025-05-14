@@ -550,8 +550,6 @@ void botmoyen(Character tabC[], Jeu* j){
     Jeu jeu;
     int n=0;
     int d=0;
-    Character tab1[3];
-    Character tab2[3];
     jeu.t1 = MakeTeam(tabC,6);
     jeu.t2 = MakeTeambot(tabC,6);
     strcpy(jeu.t2.name , "bot");
@@ -572,8 +570,6 @@ void botmoyen(Character tabC[], Jeu* j){
     Character tab4[3];
     Character tab1eff2[3];
     Character tab2eff2[3];
-    jeu.t1 = MakeTeam(tabC,6);
-    jeu.t2 = MakeTeambot(tabC,3);
     tab1[0]=jeu.t1.p1;
     tab1[1]=jeu.t1.p2;
     tab1[2]=jeu.t1.p3;
