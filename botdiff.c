@@ -2050,14 +2050,14 @@ void botdifficile(Character tabC[]){
                     jeu.t2.p3.RES=prochainperso(j)->RES;
                }
             }
-            if(&jeu.t1.p1 == prochainperso(&jeu)){
-                jeu.t1.p1.ATK_bar =0;
+            if(&jeu.t2.p1 == prochainperso(&jeu)){
+                jeu.t2.p1.ATK_bar =0;
             }
-            if(&jeu.t1.p2 == prochainperso(&jeu)){
-                jeu.t1.p2.ATK_bar =0;
+            if(&jeu.t2.p2 == prochainperso(&jeu)){
+                jeu.t2.p2.ATK_bar =0;
             }
-            if(&jeu.t1.p3 == prochainperso(&jeu)){
-                jeu.t1.p3.ATK_bar =0;
+            if(&jeu.t2.p3 == prochainperso(&jeu)){
+                jeu.t2.p3.ATK_bar =0;
             }
             }
         if(jeu.t1.p1.ActHP <= 0){
