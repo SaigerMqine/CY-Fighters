@@ -474,7 +474,7 @@ void affichage1v1(Jeu j){         //affiche le combat
              printf("─");
          }
          printf("┐");
-         printf("\n|   (Team2)");
+         printf("\n|   (Team1)");
          for(int i=0;i<88;i++){
              printf(" ");
          }
