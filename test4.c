@@ -842,7 +842,7 @@ void botdifficile(Character tabC[]){
                 }
                 tab2[d].ATK=skillATK(prochainperso(j),tab2[d]);
                 if(prochainperso(j)->MaxHP==230){
-                    ds4==prochainperso(j)->ch_skill1.duration;
+                    ds4=prochainperso(j)->ch_skill1.duration;
                     if(tab1eff2[0].MaxHP==tab1[d].MaxHP){
                         tab1eff2[0].ATK==tab1[d].ATK;
                     }
@@ -854,7 +854,7 @@ void botdifficile(Character tabC[]){
                     }                    
                 }
                  if(prochainperso(j)->MaxHP==330){
-                    ds5==prochainperso(j)->ch_skill1.duration;
+                    ds5=prochainperso(j)->ch_skill1.duration;
                     if(tab1eff2[0].MaxHP==tab1[d].MaxHP){
                         tab1eff2[0].ATK==tab1[d].ATK;
                     }
@@ -878,7 +878,7 @@ void botdifficile(Character tabC[]){
               }
             
                    if(prochainperso(j)->MaxHP==290){
-                    ds1==prochainperso(j)->ch_skill1.duration;
+                    ds1=prochainperso(j)->ch_skill1.duration;
                     if(tab1eff2[0].MaxHP==prochainperso(j)->MaxHP){
                         prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t1.p1);
                           tab1eff2[0].ATK==prochainperso(j)->ATK;
@@ -897,7 +897,7 @@ void botdifficile(Character tabC[]){
                     }
                    }
                     if(prochainperso(j)->MaxHP==190){
-                    ds3==prochainperso(j)->ch_skill1.duration;
+                    ds3=prochainperso(j)->ch_skill1.duration;
                     if(tab1eff2[0].MaxHP==prochainperso(j)->MaxHP){
                         prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t1.p1);
                           tab1eff2[0].ATK==prochainperso(j)->ATK;
@@ -915,7 +915,7 @@ void botdifficile(Character tabC[]){
                    }
                     }
                 if(prochainperso(j)->MaxHP==210){
-                    ds2==prochainperso(j)->ch_skill1.duration;
+                    ds2=prochainperso(j)->ch_skill1.duration;
                     if (prochainperso(j)->MaxHP==jeu.t1.p1.MaxHP){
                         prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t1.p1);
                          tab1eff2[0].SPD==prochainperso(j)->SPD;
@@ -933,7 +933,7 @@ void botdifficile(Character tabC[]){
                    }
                 }
                 if(prochainperso(j)->MaxHP==300){
-                    ds6==prochainperso(j)->ch_skill1.duration;
+                    ds6=prochainperso(j)->ch_skill1.duration;
                    if (prochainperso(j)->MaxHP==jeu.t1.p1.MaxHP){
                         prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t1.p1);
                          tab1eff2[0].SPD==prochainperso(j)->SPD;
@@ -986,7 +986,7 @@ void botdifficile(Character tabC[]){
                if (tab2[d].MaxHP==jeu.t2.p3.MaxHP){
                     jeu.t2.p3.DEF=tab2[d].DEF;
                }
-              ds10==prochainperso(j)->ch_skill2.duration;
+              ds10=prochainperso(j)->ch_skill2.duration;
                 if(tab2eff2[0].MaxHP==tab2[d].MaxHP){
                     tab2eff2[0].DEF==tab2[d].DEF;
                 }
@@ -998,7 +998,7 @@ void botdifficile(Character tabC[]){
                 }
                 }
             if(prochainperso(j)->MaxHP==290){
-            ds7==prochainperso(j)->ch_skill2.duration;
+            ds7=prochainperso(j)->ch_skill2.duration;
                  if (prochainperso(j)->MaxHP==jeu.t1.p1.MaxHP){
                       prochainperso(j)->DEF=skillDEF(prochainperso(j),jeu.t1.p1);
                     tab1eff2[0].DEF==prochainperso(j)->DEF;
@@ -1023,7 +1023,7 @@ void botdifficile(Character tabC[]){
                     d=verifint() -1;
                 }
                     tab2[d].SPD=skillSPDene(prochainperso(j),tab2[d]);
-              ds9==prochainperso(j)->ch_skill2.duration;
+              ds9=prochainperso(j)->ch_skill2.duration;
                  if (tab2[d].MaxHP==jeu.t2.p1.MaxHP){
                    jeu.t1.p1.SPD=tab2[d].SPD;
                }
@@ -1044,7 +1044,7 @@ void botdifficile(Character tabC[]){
                 }
                 }
             if(prochainperso(j)->MaxHP==210){
-              ds8==prochainperso(j)->ch_skill2.duration;
+              ds8=prochainperso(j)->ch_skill2.duration;
                  if (prochainperso(j)->MaxHP==jeu.t1.p1.MaxHP){
                       prochainperso(j)->RES=skillRES(prochainperso(j),jeu.t1.p1);
                    tab1eff2[0].RES==prochainperso(j)->RES;
@@ -1315,7 +1315,7 @@ void botdifficile(Character tabC[]){
                 }
                 tab2[a].ATK=skillATK(prochainperso(j),tab2[a]);
                 if(prochainperso(j)->MaxHP==230){
-                    ds4==prochainperso(j)->ch_skill1.duration;
+                    ds4=prochainperso(j)->ch_skill1.duration;
                     if(tab2eff2[0].MaxHP==tab2[a].MaxHP){
                         tab2eff2[0].ATK==tab2[a].ATK;
                     }
@@ -1327,7 +1327,7 @@ void botdifficile(Character tabC[]){
                     }                    
                 }
                  if(prochainperso(j)->MaxHP==330){
-                    ds5==prochainperso(j)->ch_skill1.duration;
+                    ds5=prochainperso(j)->ch_skill1.duration;
                     if(tab2eff2[0].MaxHP==tab2[a].MaxHP){
                         tab2eff2[0].ATK==tab2[a].ATK;
                     }
@@ -1350,7 +1350,7 @@ void botdifficile(Character tabC[]){
               }
             
                    if(prochainperso(j)->MaxHP==290){
-                    ds1==prochainperso(j)->ch_skill1.duration;
+                    ds1=prochainperso(j)->ch_skill1.duration;
                     if(tab2eff2[0].MaxHP==prochainperso(j)->MaxHP){
                         prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p1);
                           tab2eff2[0].ATK==prochainperso(j)->ATK;
@@ -1369,7 +1369,7 @@ void botdifficile(Character tabC[]){
                     }
                    }
                     if(prochainperso(j)->MaxHP==190){
-                    ds3==prochainperso(j)->ch_skill1.duration;
+                    ds3=prochainperso(j)->ch_skill1.duration;
                     if(tab2eff2[0].MaxHP==prochainperso(j)->MaxHP){
                         prochainperso(j)->ATK=skillATK(prochainperso(j),jeu.t2.p1);
                           tab2eff2[0].ATK==prochainperso(j)->ATK;
@@ -1388,7 +1388,7 @@ void botdifficile(Character tabC[]){
                     }
                    }
                 if(prochainperso(j)->MaxHP==210){
-                    ds2==prochainperso(j)->ch_skill1.duration;
+                    ds2=prochainperso(j)->ch_skill1.duration;
                     if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
                         prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p1);
                          tab2eff2[0].SPD==prochainperso(j)->SPD;
@@ -1406,7 +1406,7 @@ void botdifficile(Character tabC[]){
                    }
                 }
                 if(prochainperso(j)->MaxHP==300){
-                    ds6==prochainperso(j)->ch_skill1.duration;
+                    ds6=prochainperso(j)->ch_skill1.duration;
                    if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
                         prochainperso(j)->SPD=skillSPD(prochainperso(j),jeu.t2.p1);
                          tab2eff2[0].SPD==prochainperso(j)->SPD;
@@ -1457,7 +1457,7 @@ void botdifficile(Character tabC[]){
                if (tab1[a].MaxHP==jeu.t1.p3.MaxHP){
                     jeu.t1.p3.DEF=tab1[a].DEF;
                }
-              ds10==prochainperso(j)->ch_skill2.duration;
+              ds10=prochainperso(j)->ch_skill2.duration;
                 if(tab1eff2[0].MaxHP==tab1[a].MaxHP){
                     tab1eff2[0].DEF==tab1[a].DEF;
                 }
@@ -1469,7 +1469,7 @@ void botdifficile(Character tabC[]){
                 }
                 }
             if(prochainperso(j)->MaxHP==290){
-            ds7==prochainperso(j)->ch_skill2.duration;
+            ds7=prochainperso(j)->ch_skill2.duration;
                  if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
                       prochainperso(j)->DEF=skillDEF(prochainperso(j),jeu.t2.p1);
                     tab2eff2[0].DEF==prochainperso(j)->DEF;
@@ -1493,7 +1493,7 @@ void botdifficile(Character tabC[]){
                     a=(rand()%3);
                 }
                     tab1[a].SPD=skillSPDene(prochainperso(j),tab1[a]);
-              ds9==prochainperso(j)->ch_skill2.duration;
+              ds9=prochainperso(j)->ch_skill2.duration;
                  if (tab1[a].MaxHP==jeu.t1.p1.MaxHP){
                    jeu.t1.p1.SPD=tab1[a].SPD;
                }
@@ -1514,7 +1514,7 @@ void botdifficile(Character tabC[]){
                 }
                 }
             if(prochainperso(j)->MaxHP==210){
-              ds8==prochainperso(j)->ch_skill2.duration;
+              ds8=prochainperso(j)->ch_skill2.duration;
                  if (prochainperso(j)->MaxHP==jeu.t2.p1.MaxHP){
                       prochainperso(j)->RES=skillRES(prochainperso(j),jeu.t2.p1);
                    tab2eff2[0].RES==prochainperso(j)->RES;
@@ -1997,7 +1997,7 @@ void botmoyen(Character tabC[]){
                 }
                 }
             if(prochainperso(j)->MaxHP==290){
-            ds17==prochainperso(j)->ch_skill2.duration;
+            ds17=prochainperso(j)->ch_skill2.duration;
                  if (prochainperso(j)->MaxHP==jeu.t1.p1.MaxHP){
                       prochainperso(j)->DEF=skillDEF(prochainperso(j),jeu.t1.p1);
                     tab1eff2[0].DEF==prochainperso(j)->DEF;
@@ -2022,7 +2022,7 @@ void botmoyen(Character tabC[]){
                     d=verifint() -1;
                 }
                     tab2[d].SPD=skillSPDene(prochainperso(j),tab2[d]);
-              ds19==prochainperso(j)->ch_skill2.duration;
+              ds19=prochainperso(j)->ch_skill2.duration;
                  if (tab2[d].MaxHP==jeu.t2.p1.MaxHP){
                    jeu.t1.p1.SPD=tab2[d].SPD;
                }
@@ -2043,7 +2043,7 @@ void botmoyen(Character tabC[]){
                 }
                 }
             if(prochainperso(j)->MaxHP==210){
-              ds18==prochainperso(j)->ch_skill2.duration;
+              ds18=prochainperso(j)->ch_skill2.duration;
                  if (prochainperso(j)->MaxHP==jeu.t1.p1.MaxHP){
                       prochainperso(j)->RES=skillRES(prochainperso(j),jeu.t1.p1);
                    tab1eff2[0].RES==prochainperso(j)->RES;
