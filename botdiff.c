@@ -241,7 +241,15 @@ void botfacile(Character tabC[], Jeu* j){
                     d=verifint() -1;
                 }
                tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
-                prochainperso(j)->ActHP=tab2[d].ActHP;
+               if(j.t2.p1.MaxHP==tab2[d].MaxHP){
+                       j.t2.p1.ActHP=tab2[d].ActHP;
+                    }
+                    if(j.t2.p2.MaxHP==tab2[d].MaxHP){
+                       j.t2.p2.ActHP=tab2[d].ActHP;
+                    }
+                    if(j.t2.p3.MaxHP==tab2[d].MaxHP){
+                        j.t2.p3.ActHP=tab2[d].ActHP;
+                    } 
             }
             if(n==2){
                if(prochainperso(j)->MaxHP==230||prochainperso(j)->MaxHP==330){
@@ -789,6 +797,15 @@ void botmoyen(Character tabC[], Jeu* j){
                     d=verifint() -1;
                 }
                tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
+                if(j.t2.p1.MaxHP==tab2[d].MaxHP){
+                       j.t2.p1.ActHP=tab2[d].ActHP;
+                    }
+                    if(j.t2.p2.MaxHP==tab2[d].MaxHP){
+                       j.t2.p2.ActHP=tab2[d].ActHP;
+                    }
+                    if(j.t2.p3.MaxHP==tab2[d].MaxHP){
+                        j.t2.p3.ActHP=tab2[d].ActHP;
+                    } 
             }
             if(n==2){
                if(prochainperso(j)->MaxHP==230||prochainperso(j)->MaxHP==330){
@@ -1346,7 +1363,15 @@ void botdifficile(Character tabC[]){
                     d=verifint() -1;
                 }
                tab2[d].ActHP=calcul_des_dégats_pris(prochainperso(&jeu),tab2[d]);
-                 prochainperso(j)->ActHP=tab2[d].ActHP;
+                if(j.t2.p1.MaxHP==tab2[d].MaxHP){
+                       j.t2.p1.ActHP=tab2[d].ActHP;
+                    }
+                    if(j.t2.p2.MaxHP==tab2[d].MaxHP){
+                       j.t2.p2.ActHP=tab2[d].ActHP;
+                    }
+                    if(j.t2.p3.MaxHP==tab2[d].MaxHP){
+                        j.t2.p3.ActHP=tab2[d].ActHP;
+                    } 
             }
             if(n==2){
                if(prochainperso(j)->MaxHP==230||prochainperso(j)->MaxHP==330){
